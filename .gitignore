@@ -1,0 +1,13 @@
+# Ignore virtual environment
+myenv/
+
+# Ignore pipenv
+Pipfile
+Pipfile.lock
+
+# Ignore any compiled Python files
+*.pyc
+
+
+# Ignore database
+db.sqlite3
