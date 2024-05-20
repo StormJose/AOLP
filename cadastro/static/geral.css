@@ -109,6 +109,11 @@ section {
     /* position: relative; */
 }
 
+
+.section-content {
+    
+}
+
 h1 {
     font-family: 'Righteous';
     font-size: 4.2rem;
@@ -561,11 +566,11 @@ h2 {
 /* CAROUSEL */
 
 .slider {
-    /* z-index: 9999; */
+    /* z-index: 9998; */
     position: relative;
 
-    max-width: 60%;
-    height: 20rem;
+    max-width: 85%;
+    height: 18rem;
     margin: 0 auto;
   
     overflow: hidden;
