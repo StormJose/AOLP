@@ -1,0 +1,343 @@
+
+
+/*=====================================*/
+/* (375px) DISPOSITIVOS MÓVEIS PADRÃO  */
+/*=====================================*/
+
+@media (min-width: 23em) {
+
+}
+
+
+/*=========================================================*/
+/* (480px) DISPOSITIVOS MÓVEIS MAIORES / TABLESTS PEQUENOS */
+/*=========================================================*/
+
+@media (min-width: 30em) {
+
+    /* CABEÇALHO DO PERFIL */
+      #conta--progresso {
+        height: 0.6rem;
+    }
+
+    .subnavbar--list { 
+        font-size: 1.4rem;
+    }
+
+
+    .subnavbar--tab {
+        padding: 1rem;
+     
+    }
+
+    /* PAINEIS DO DASHBOARD */
+   /*  .dashboard--paineis {
+        grid-auto-flow: row;
+        grid-template-columns: auto;
+        grid-template-rows: max-content;
+        gap: 2.4rem;
+    } */
+   
+}
+
+
+/*==========================*/
+/* (600px) TABLETS PEQUENOS */
+/*==========================*/
+
+
+@media (min-width: 37.5em) {
+
+    /* Geral */
+
+    .heading-secundaria {
+        font-size: 2.6rem;
+    }
+
+    .heading-terciaria {
+        font-size: 2.4rem;
+    }
+
+
+    .btn {
+        padding: 1.1rem 1.3rem;
+      
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+
+
+    /* CABEÇALHO DO PERFIL */
+
+    .perfil-header .perfil-img {
+        max-width: 9.6rem;
+        height: 9.6rem;
+    }
+
+    .conta--progresso-nivel {
+        font-size: 1.4rem;
+    }
+
+
+
+    /* Tabs */
+
+    .subnavbar--list {
+        backdrop-filter: none;
+    }
+
+
+    .subnavbar--list { 
+        font-size: 1.6rem;
+    }
+
+    .subnavbar--tab {
+        padding: 1.2rem;
+        font-weight: 600;
+    }
+
+
+
+    /* PAINEIS DO DASHBOARD */
+
+    .dashboard {
+        row-gap: 2.4rem;
+    }
+
+
+    .painel-tag {
+       font-size: 1.6rem;
+    }
+
+    .curso-título, 
+    .conquista-título {
+        font-size: 2rem;
+    }
+
+    .curso-instrutor,
+    .conquista-descricao  {
+        font-size: 1.4rem;
+    }
+
+
+    .curso--progresso-texto,
+    .conquista--progresso-texto {
+    font-size: 1.6rem;
+    }
+
+
+    /* cursos */
+    #cursos {
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 0.4rem 0.6rem;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+ 
+    }
+
+    #cursos option {
+        width: 0;
+        padding: 0.5rem;
+        font-size: 1.6rem;
+    }
+
+    .item-curso-img {
+        width: 144px;
+        height: 100%;
+    }
+
+    /* tab - conquistas */
+
+    .item-conquista-título {
+    font-size: 2rem;
+}
+
+}
+
+
+
+/*========================================*/
+/* (768px) TABLETS E DISPOSITIVOS MAIORES */
+/*========================================*/
+
+@media (min-width: 48em) {
+    /* Geral */
+
+    /* CABEÇALHO DO PERFIL */
+
+    #conta--progresso {
+        height: 0.5rem;
+}
+
+
+    /* PAINEIS DO DASHBOARD */
+    .dashboard--paineis {
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: max-content;
+        column-gap: 2.4rem;
+    } 
+
+    .dashboard--painel {
+        gap: 3.2rem;
+    }
+
+    .curso-título {
+        flex-shrink: 0;
+    }
+
+
+
+
+
+}
+
+
+/*=======================================*/
+/* (1024px) TABLETS E NOTEBOOKS PEQUENOS */
+/*=======================================*/
+
+@media (min-width: 64em) {
+    .main--layout {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        justify-content: space-between;
+    }
+
+  
+
+    /* CABEÇALHO DO PERFIL */
+    .perfil-header {
+        grid-template-columns: auto;
+        align-items: center;
+        padding: 2.8rem;
+        row-gap: 2.4rem;
+        column-gap: 1.4rem;
+    }
+
+    .perfil-info-box {
+        max-width: 20%;
+    }
+
+    #conta--progresso {
+        height: 0.5rem;
+}
+
+    /* SUBNAVEGAÇÃO */
+   .subnavbar--list {
+        padding: 0 1rem;
+        flex-direction: column;
+        font-size: 1.4rem; 
+    }
+
+
+    .subnavbar--tab {
+        flex-shrink: 0;
+        background-color: transparent;
+        font-size: inherit;
+        padding: 0.8rem;
+        border-radius: 11px;
+    }
+
+    .subnavbar--tab--active {
+        background-color: #e1f2fa;
+        color: #35BEF0;
+    }
+
+    /* tabs */
+
+    .tab-content {
+        padding: 0 1.8rem;
+    }
+
+    /* dashboard */
+      .dashboard {
+        row-gap: 3.2rem;
+    }
+
+    .dashboard--painel {
+        gap: 5.4rem;
+        padding: 0;
+    }   
+
+
+    /* cursos */
+    .lista--cursos {
+        padding: 3.4rem 0;
+        list-style: none;
+        flex-direction: row;
+        
+        gap: 2.6rem;
+    }
+
+
+    .lista--curso-opcoes {
+        padding: 1.4rem 1.4rem 2.8rem 0.4rem;
+    }
+
+    .item-curso {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 1.2rem;
+    }
+
+    .item-curso-img {
+        border-radius: 11px;
+        width: 244px;
+        height: 100%;
+    }
+
+    .item-curso-conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+        gap: 0.1rem;
+    }
+
+    .progress--container {
+        width: 100%;
+    }
+
+
+    #course--progress-1, 
+    #course--progress-2,
+    #course--progress--3 {
+        width: 100%;
+        height: 6px; 
+    }
+
+    .course--progress-text {
+        margin-left: auto;
+        font-size: 1.6rem;
+    }
+
+
+    .curso-opcoes--btn {
+        display: none;
+        /* FLEX */
+        align-items: flex-start; 
+        cursor: pointer;
+    }
+
+    .lista--curso-opcoes {
+        display: none;
+    }
+
+
+    .lista--cursos .btn--main {
+        display: none;
+    }
+
+    /* tab - conquistas */
+
+    .item-conquista--btn {
+    font-weight: 600;
+    }
+
+
+}

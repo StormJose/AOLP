@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil</title>
+</head>
+<body>
+    <form action="{% url 'user_profile' %}" method="post">
+        {% csrf_token %}
+        <div>
+            {% for foto in perfil %}
+            <input type="radio" id="{{ foto.id }}" name="drone" value="{{ foto.id }}" checked />
+            <label for="{{ foto.id }}"><img src="../imagens/{{ foto.imagem }}" alt="abobrinha" style=" width: 150px;"></label>
+            {% endfor %}
+        </div>
+        <div>
+            <button type="submit" value="escolher">
+                escolher
+            </button>
+        </div>
+    </form>
+</body>
+</html>

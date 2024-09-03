@@ -1,0 +1,257 @@
+/* estas são queries globais que alteram os 
+estilos definidos em geal.css 
+ para diferentes breakpoints e viewports */
+
+
+/*=====================================*/
+/* (368px) DISPOSITIVOS MÓVEIS PADRÃO  */
+/*=====================================*/
+
+@media (min-width: 23em) {
+
+    /* geral */
+
+    .container {
+        padding: 2.4rem 1.8rem;
+    }
+
+  .heading-primaria {
+    font-size: 3.2rem;
+  }
+
+}
+
+
+/*=========================================================*/
+/* (480px) DISPOSITIVOS MÓVEIS MAIORES / TABLESTS PEQUENOS */
+/*=========================================================*/
+
+@media (min-width: 30em) {
+
+
+   /* geral */
+
+    .paragraph {
+        max-width: 95%;
+    }
+   
+}
+
+
+/*==========================*/
+/* (600px) TABLETS PEQUENOS */
+/*==========================*/
+
+@media (min-width: 37.5em) {
+    
+   /* footer */
+   .footer-navigation {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2.4rem;
+        row-gap: 3.2rem;
+    }
+ 
+    .footer-links {
+        justify-self: center;
+    }
+}
+
+
+
+/*========================================*/
+/* (768px) TABLETS E DISPOSITIVOS MAIORES */
+/*========================================*/
+
+@media (min-width: 48em) {
+   
+    .menu-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .heading-secundaria {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+
+    /* footer */
+    .company {
+        align-items: flex-start;
+        text-align: left;
+        gap: 0.6rem;
+    }
+
+    .logo-container {
+        align-self: start;
+    }
+
+}
+
+
+/*=======================================*/
+/* (1024px) TABLETS E NOTEBOOKS PEQUENOS */
+/*=======================================*/
+
+@media (min-width: 64em) {
+
+
+   /* geral */
+   .heading-primaria {
+    font-size: 4rem;
+  } 
+
+  .heading-secundaria {
+    font-size: 3.2rem;
+  }
+
+  .dropdown {
+    opacity: 100;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+ 
+    background-color: #FFF;
+    padding: 1.2rem 2.4rem;
+
+    grid-template-columns: 0.4fr 2fr ;
+
+    transition: 0.5s all;
+    }
+
+
+
+    .dropdown  .nav-items--list {
+        grid-column: 2;
+        grid-row: 1;
+
+        position: relative;
+        margin-top: 0;
+        font-size: 1.4rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 3.2rem;
+    }
+
+
+    .dropdown .nav-submenu-list--active {
+        position: absolute;
+        background-color: inherit;
+        left: 0;
+        padding: 1.2rem 3.2rem 1.2rem 1.2rem;
+        margin-top: 12px;
+        margin-left: 0;
+        font-size: 1.6rem;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8em;
+
+        border-radius: 11px;
+
+        box-shadow: 1px 1.5px 20px 1px rgba(0, 0, 0, 0.137);
+    }
+
+    .dropdown .nav-submenu-list--active {
+        background-color: #fff;
+    }
+
+    .dropdown.instrutor .nav-submenu-list--active {
+        background-color: #1D267D;
+    }
+
+
+    .nav-link-box {
+        /* padding: 0.8rem 1.2rem; */
+        border-radius: 7px;
+        font-weight: 500;
+        gap: 0.8rem;
+    }
+
+
+    .nav-link-box--active {
+        background-color: #fff;
+    }
+
+    .nav-link-box:hover,
+    .instrutor .nav-link-box--active {
+        background-color: #f1f3f5;
+    }
+
+    .instrutor .nav-link-box:hover, 
+    .instrutor .nav-link-box--active {
+        background-color: #1d267d;
+        color:#f1f3f5;
+    }
+
+
+    /* Link: Eventos */
+    .nav-items--list li:last-child {
+        width: auto;
+        align-self: flex-end;
+    }
+
+    .nav-item { 
+        width: auto;
+        text-decoration: none;
+        border-radius: 11px;
+        color: inherit;
+    }
+
+    .nav-icon {
+        display: none;
+    }
+
+    .dropdown .btns-box {
+        grid-column: 3;
+    }
+
+    .dropdown .btns-box {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+
+    .dropdown .nav-perfil-img {
+        display: block;
+        margin-left: auto;
+        visibility: visible;
+        pointer-events: all;
+        opacity: 1;
+    
+    }
+
+    .nav-perfil-img:hover #user-dropdown {
+        right: 28px;
+    }
+
+    #user-dropdown .nav-items--list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.4rem;
+    }
+
+    .btns-box .menu-btn--open,
+    .btns-box .menu-btn--close {
+        display: none;
+    }
+
+
+    #user-dropdown {
+        left: auto;
+        right: 50px;
+    }
+
+     /* footer */
+   .footer-navigation {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2.4rem;
+        row-gap: 3.2rem;
+    }
+
+}

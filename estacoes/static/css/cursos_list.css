@@ -1,0 +1,79 @@
+.main-container{
+    margin-left: 10px;
+}
+.tiltle_curso{
+    font-size: 48px;
+}
+.player_curso {
+    background-color: rgb(145, 145, 145);
+    padding: 20px;
+    margin-top: 30px;
+    max-width: 70%;
+    border-radius: 20px;
+    border: 2px solid black;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Adicionado para centralizar verticalmente */
+  }
+  .player_curso p{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .flex-box_curso {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .player_curso i {
+    margin-right: 10px;
+    font-size: 72px;
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    width: 400px; /* Ajustado para caber dentro do espaço */
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: black; /* Alterado para verde */
+    border-radius: 10px;
+    width: 50%; /* Definindo uma largura inicial de 50% para a barra de progresso */
+    transition: width 0.5s ease-in-out;
+  }
+@media(max-width: 900px){
+
+    .player_curso{
+        max-width: 90%;
+        height: 70px;
+        align-items: center;
+    }
+    .player_curso i {
+        margin-right: 10px;
+        font-size: 60px;
+        background: rgb(255,255,255);
+        background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 29%);
+        border-radius: 70px;
+      }
+      .player_curso P{
+        font-size: 20px;
+      }
+    /* .fundo-branco{
+        background: rgb(140,140,140);
+        background: linear-gradient(90deg, rgba(140,140,140,1) 29%, rgba(255,255,255,1) 29%);
+        border-radius: 50px;
+        width: 48px;
+        height: 40px;
+    } */
+    .flex-box_curso{
+        margin-bottom: 10px;
+    }
+    .progress-bar{
+        width: 200px;
+        height: 22px;
+    }
+}

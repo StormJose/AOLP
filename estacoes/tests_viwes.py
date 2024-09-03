@@ -1,0 +1,1 @@
+# To perdidão, olha la na API. Ta em baixo da .venv

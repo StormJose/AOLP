@@ -1,0 +1,110 @@
+
+
+/*================================*/
+/* - MAIOR QUE 768px (Desktops) - */
+/*================================*/
+
+@media (min-width: 48em) {
+    .subnavigation-container {
+        /* Redefinindo os estilos de navegação */
+        z-index: 1000;
+        position: static;
+    
+        border-radius: 0;
+        margin: 0;
+        padding: 1.2rem 0 0 0;
+    }
+
+
+    .aula-subnavigation-list {
+        padding-top: 0.8rem;
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+       
+        gap: 1.2rem;
+    }
+
+
+    .tab-btn {
+        cursor: pointer;
+        display: block;
+        font-size: 1.8rem;
+
+        background-color: transparent;
+        border: none;
+        letter-spacing: 0.2px;
+    }
+
+    .mobile-nav-icon {
+
+        display: none;
+        color:#8a8a8a;
+        width: 24px;
+        height: 24px;
+
+    }
+
+    .tab-btn-active {
+        color: inherit;
+        padding-bottom: 0.2rem;
+        /* Apenas para telas maiores */
+        border-bottom: 2px solid #35bef0;
+    }
+
+    .tab-btn-active .mobile-nav-icon {
+        
+        color: #35bef0;
+    }
+
+
+    /* Playlist */
+
+    .aulas-playlist {
+        padding: 0 1.8rem;
+
+        z-index: 999;
+        position: static;
+        bottom: 0;
+    
+        filter: blur(100);
+    }
+
+}
+
+
+
+/*=================================*/
+/* - MAIOR QUE 1024px (Desktops) - */
+/*=================================*/
+
+@media (min-width: 64em) {
+
+    /* HEADER */
+     
+    .aulas--header {
+        padding: 1.8rem 0;
+        background-color: #333;
+        color: #f1f5f9;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        column-gap: 1.2rem;
+    }
+
+
+    /* aula */
+
+    .video-frame {
+        height: 75rem;
+    }
+    
+    .aulas-playlist {
+        padding: 3.2rem 1.8rem;
+        position: static;
+        bottom: 0;
+        filter: blur(0);
+   
+}
+   
+}

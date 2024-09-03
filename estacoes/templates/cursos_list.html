@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+   
+    <link rel="stylesheet" href="{% static 'css/aulas.css' %}">
+    <link rel="stylesheet" href="{% static 'css/queries.css' %}">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block extra_js %}
+ 
+    <script defer src="{% static 'js/aulas.js' %}"></script>
+{% endblock %}
+    
+<title>{% block title %}Academy One - Cursos{% endblock %}</title>
+
+{% block content %}
+        <section class="section--aulas">
+            <a href="{% url 'cursos' %}" class="icon">
+                <svg class="voltar-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>
+            </a>
+            <div class="heading-container container">   
+                <h1 class="heading-secundaria">{{ curso.nome }}</h1>
+            </div>
+            <div class="aulas-box container">
+                <ul>
+                    {% for aula in curso.aulas.all %}
+                    <li>
+                    <div class="video-player-box">
+                       <iframe  height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen >
+                            
+                    </iframe>   
+
+                    </div>
+                <div class="card">
+                    <a class="" href="{{aula.url}}">
+                        <div class="card-conteudo">
+                            <div>
+
+                                {% comment %} <h3 class="card-titulo">{{ aula.titulo }}</h3> {% endcomment %}
+                                <div class="progress-bar">
+                                    <div class="progress"></div>
+                                </div>
+                                <p class="card-descricao"> {{aula.descricao}} </p>
+                            
+                            </div>
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="play-icon">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </span>
+                                {% comment %} <span class="icon">
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                                    </svg>
+                                </span> {% endcomment %}
+                        </div>
+                    
+                    </a>
+                </div>
+                </li>
+                <!-- <a href="{% url 'estacoes' %}" class="card-link">Ver cursos</a> -->
+                </div>
+                {% endfor %}
+            </ul>
+            
+            </div>
+
+            <div class="curso-modal">
+                
+            </div>
+        </section>
+{% endblock %}
+            

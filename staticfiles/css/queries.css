@@ -1,0 +1,370 @@
+/*************************************/
+/* MENOR QUE 1440px (desktops menores) */
+/*************************************/
+@media (max-width: 90em) {
+
+  .nav-btns {
+    /* GRID */
+    justify-self: start;
+  }
+
+  /* areas */
+
+
+  /* comunidade */
+  .card {
+    max-width: 100%;
+  }
+
+
+  /* rodapé */
+  .footer {
+    padding: 128px 48px 0 48px;
+  }
+}
+
+/*************************************/
+/* MENOR QUE 1366 (desktops menores) */
+/*************************************/
+@media (max-width: 85.3em) {
+  
+  /* hero */
+  .hero-text-content {
+    padding-top: 5.8rem;
+  
+  }
+
+ 
+  /* call-to-action */
+  .call-to-action--section {
+    padding: 0 48px;
+  }
+
+  /* rodapé */
+  .company--copyrights {
+    font-size: 10px;
+    text-align: left;
+  }
+}
+
+/******************************/
+/*  MENOR QUE 1024px (Tablets) */
+/******************************/
+@media (max-width: 64em) {
+  /* geral */
+
+  .paragraph {
+    font-size: 1.6rem;
+  }
+
+}
+
+/*********************************/
+/* - MENOR QUE 944px (Tablets) - */
+/*********************************/
+@media (max-width: 59em) {
+  /* geral */
+  .home-hero-section {
+    padding: 8.4rem 0;
+  }
+
+  /* hero */
+  .hero {
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-text-content {
+    align-items: center;
+   text-align: center;
+  
+  }
+
+  .hero-text-box {
+    max-width: 75rem;
+    align-items: center;
+    gap: 3.2rem;
+  }
+
+   /* areas */
+  .estacoes--section {
+    padding: 6.4rem 0;
+  }
+
+ /* sobre */
+  .sobre--section {
+    padding: 6.4rem 0;
+  }
+  
+  
+   /* comunidade */
+  .comunidade--section {
+    padding: 6.4rem 0;
+  }
+  
+  .card-forum-content {
+    padding: 2.4rem;
+  }
+  
+  
+  /* featured-in */
+  
+  /* depoimentos */
+  .stats--list li span {
+    font-size: 38px;
+  }
+  
+  .stats--list li p {
+    font-size: 12px;
+  }
+
+
+  /* perguntas frequentes */
+   .faq--section {
+     padding: 6.4rem 0;
+   }
+  
+  
+}
+
+/**************************************/
+/*  MENOR QUE 768px (Tablets menores) */
+/**************************************/
+
+@media (max-width: 48em) {
+  
+ 
+  /* sobre */
+
+  .heading-sobre {
+    font-size: 3.2rem; 
+  
+  }
+
+  /* primeiro parágrafo */
+  .sobre-text-box p {
+    max-width: 85%;
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    
+  }
+
+
+  /* comunidade */
+  .cards-box {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    row-gap: 3.2rem;
+    padding: 0 1.8rem;
+  }
+
+  .card-resources {
+    text-align: center;
+  }
+
+  .card-content-box {
+    padding: 0;
+  }
+
+
+  /*  Card Recursos **/
+  .card-content-box.resources img,
+  .card-content-box svg {
+    max-width: 50%;
+}
+
+
+  .card:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .card:last-child {
+    height: 100%;
+    grid-row: auto;
+  }
+
+
+  /* Card forum */
+  .card-forum .card-content-box {
+    justify-content: center;
+  
+  }
+
+  .card-forum-content {
+    max-width: 75%;
+    padding: 2.4rem 4.8rem;
+  }
+
+
+  /* perguntas frequentes */
+
+  .accordion {
+    padding: 0 1.8rem 2.8rem 1.8rem;
+  }
+
+  /* rodapé */
+
+  .footer-navigation {
+    padding: 0 2.4rem 2.4rem 4.8rem;
+  }
+
+  .footer-social-links {
+    gap: 1.2rem;
+  }
+
+  .footer-links span {
+    font-size: 1.6rem;
+  }
+
+  .footer-links ul a,
+  .footer-icons {
+    font-size: 1.4rem;
+  }
+
+  .company {
+    padding-top: 4.2rem;
+    flex-wrap: wrap;
+  }
+
+  .social {
+    padding: 1.2rem 0;
+    display: flex;
+
+    gap: 1.2rem;
+    justify-self: end;
+    flex-wrap: wrap;
+  }
+
+}
+
+/***************************************/
+/*  MENOR QUE 600px (Tablets pequenos) */
+/***************************************/
+
+@media (max-width: 37.5em) {
+
+
+
+  /* areas */
+  .estacoes--section {
+    padding: 4.8rem 0;
+  }
+ 
+
+  .cards-de-estacoes {
+    gap: 3.2rem;
+  }
+
+
+  /* sobre */
+  .sobre--section {
+    padding: 4.8rem 0;
+  }
+
+
+  /* comunidade */
+  .comunidade--section {
+    padding: 4.8rem 0;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .card-text-box p {
+    font-size: 1.4rem;
+  }
+
+ 
+  /* depoimentos */
+  .slide {
+    width: 100%;
+    padding: 0;
+  }
+
+  .testimonial {
+    padding: 2.4rem;
+  }
+
+   /* perguntas frequentes */
+  .faq--section {
+    padding: 4.8rem 0;
+  }
+}
+
+
+/*********************************************************************/
+/*  MENOR QUE 480px (Grandes dispositivos mobile / Tablets pequenos) */
+/*********************************************************************/
+
+@media (max-width: 30em) {
+
+
+  /* estações */
+  .estacoes--section {
+    padding: 2.4rem 0;
+  }
+  
+  .cards-de-estacoes {
+    padding: 2.4rem 3.2rem;
+  }
+  
+
+  /* sobre */
+  .sobre--section {
+    padding: 2.4rem 0;
+  }
+
+  .heading-sobre {
+    font-size: 2.8rem; 
+  }
+
+  /* primeiro parágrafo */
+  .sobre-text-box p {
+    max-width: 85%;
+    font-size: 1.4rem;
+    
+  }
+
+  .sobre-link {
+
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+  
+  }
+
+
+  /* comunidade */
+  .comunidade--section {
+    padding: 2.4rem 0;
+  }
+
+
+  .card-forum-content {
+    max-width: 100%;
+    padding: 2rem;
+  }
+
+  /* perguntas frequentes */
+  
+  .faq--section {
+    padding: 2.4rem 0;
+  }
+
+
+}
+
+
+/*******************************************/
+/*  MENOR QUE 368px (dispositivos mobile ) */
+/*******************************************/
+
+@media (max-width: 23em) {
+ 
+
+}

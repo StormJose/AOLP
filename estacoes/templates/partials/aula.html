@@ -1,0 +1,85 @@
+
+
+
+{% load static %}
+
+{% block extra_css %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/cursos.css' %}"> {% endcomment %}
+{% endblock %}
+
+
+{% comment %} ESTE NÃO É O TEMPLATE GERADO QUANDO /aulas/{aulaId} É VISITADO. 
+            A INTERFACE É GERADA EM js/aulas.js
+{% endcomment %}
+{% block content %}
+
+      {% comment %}   <iframe class="video-frame" width="100%" src="{{aula.url}}"  frameborder="0" allowfullscreen></iframe>
+    
+    <div class="aula-text-box">
+        <h3 class="aula-selecionada-titulo">{{ aula.titulo }}</h3>
+        <p class="aula-selecionada-descrição">{{ aula.descricao }}</p>
+    </div>
+    <div class="aula-related-content">
+        <div class="subnavigation-container">
+            <ul class="aula-subnavigation-list">
+                <li>
+                    <button class="tab-btn tab-btn-active" id="1">Sobre</button>
+                </li>
+                <li>
+                    <button class="tab-btn" id="2">Exercícios</button>
+                </li>
+                <li>
+                    <button class="tab-btn" id="3" >Comentários</button>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs-container">
+            <div class="tab-content about-tab" data-tab="1">
+                <p>duração:{{video_details.duracao}}</p>
+                <p>{% lorem 8 w random %}</p>
+                <p><span>Instrutor</span>: Fulano de Tal.</p>
+                <p><span>Data</span>: 23/11/2024.</p>
+            </div>
+            <div class="tab-content exercises-tab">
+                <div class="">
+                   
+                </div>
+            </div>
+            <!-- Comentários e dúvidas -->
+            <div class="tab-content comments-tab">
+                <div class="doubt-box">
+                    <header class="doubt-header">
+                        <img src="" alt="foto de perfil do usuário"/>
+                        <h4 class="doubt-title">Minha dúvida</h4>
+                    </header>
+                    <div class="doubt-answer-content">
+                        <p class="doubt-text"></p>
+                        <time datetime="2024-08-29">
+                            29 de Agosto, 2024
+                        </time>
+                    </div>
+                    <ul class="doubt-answers--list">
+                        <li>
+                            <div class="doubt-answer-box">
+                                <header class="doubt-answer-header">
+                                    <img src="" alt="" />
+                                    <h5 class="doubt-answer-title">Interação do instrutor</h5>
+                                </header>
+                                <div class="doubt-answer-content">
+                                    <p class="doubt-answer-text">Resposta do instrutor...</p>
+                                    <time datetime="2024-08-29">
+                                        29 de Agosto, 2024
+                                    </time>
+                                </div>
+                             
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+
+            </div>
+        </div>
+    </div> {% endcomment %}
+{% endblock %}

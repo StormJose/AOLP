@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes da Estação</title>
+</head>
+<body>
+    <h1>{{ estacao.nome }}</h1>
+    <p>{{ estacao.descricao }}</p>
+    <a href="{% url 'estacao_edit' estacao.pk %}">Editar</a>
+    <form action="{% url 'estacao_delete' estacao.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Deletar">
+    </form>
+</body>
+</html>

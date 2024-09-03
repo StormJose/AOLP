@@ -1,0 +1,333 @@
+.aulas--section {
+    padding: 5.7rem 0 9.6rem 0; 
+}
+
+.aula--header {
+    display: none;
+}
+
+.voltar-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-left: 1.2rem;
+    background-color: #35bef046;
+    padding: 1.2rem;
+    border-radius: 50%;
+    color: #f1f5f9;
+    
+    transition: 0.15s all;
+}
+
+.voltar-icon:hover, .voltar-icon:active {
+    color: #35bef0;
+}
+
+.heading-span {
+    font-size: 1.2rem;
+}
+
+.aulas-container {
+    position: relative;
+
+    display: grid;
+}
+
+.video-frame {
+    width: 100%;
+    height: auto;
+}
+
+.aula-text-box {
+    padding: 0.8rem 1.8rem 0 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+
+.aula-selecionada-titulo {
+    font-size: 1.6rem;
+}
+
+.aula-selecionada-descrição {
+    font-size: 1.4rem;
+}
+
+
+.aula-related-content {
+    padding: 0.8rem 1.8rem 0 1.8rem;
+}
+
+
+
+/* SUBNAVEGAÇÃO & NAVAEGAÇÃO MOBILE */
+
+.subnavigation-container {
+    z-index: 1000;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    /* border-radius: 21px; */
+    padding: 0.6rem 0;
+}
+
+
+.aula-subnavigation-list {
+    padding-top: 0.8rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.6rem;
+}
+
+
+.tab-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+
+    background-color: transparent;
+    border: none;
+    letter-spacing: 0.2px;
+}
+
+.mobile-nav-icon {
+    color: #495057;
+    width: 24px;
+    height: 24px;
+}
+
+.tab-btn-active {
+    color: #35bef0;
+    padding-bottom: 0.2rem;
+}
+
+.tab-btn-active .mobile-nav-icon {  
+    color: #35bef0;
+}
+
+
+/* tabs de conteúdo */
+
+.about-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.8rem;
+}
+
+.about-tab p {
+    font-size: 1.2rem;
+}
+
+.about-tab span {
+    font-weight: 600
+}
+
+.tabs-container {
+    padding: 2.4rem 0;
+}
+
+.heading-container {
+    padding: 0.8rem 0 2.4rem 0;
+}
+
+
+/* tab de comentários e dúvidas */
+
+/* .doubt-box {
+
+}
+doubt-header
+doubt-title
+doubt-answer-content
+doubt-text
+doubt-answers--list
+doubt-answer-box
+doubt-answer-header
+doubt-answer-titl
+doubt-answer-content
+doubt-answer-text
+ */
+.aulas-playlist {
+    padding: 0 1.8rem;
+
+    z-index: 999;
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    filter: blur(1);
+}
+
+.open--playlist.aulas-playlist {
+
+}
+
+
+.aulas-list {
+    display: none;
+}
+
+
+/* AULA ATIVA */
+
+.open--playlist .current-active-aula {
+    margin-bottom: 0.8rem;
+}
+/*============*/
+
+
+.close--playlist-icon {
+    display: none;
+}
+
+.open--playlist .close--playlist-icon {
+    display: block;
+}
+
+.open--playlist .open--playlist-icon {
+    display: none;
+}
+
+.open--playlist .aulas-list {
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    list-style: none;
+}
+
+.current-aula {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-aula span {
+    font-size: 0.8rem;
+}
+
+
+.current-aula-card-titulo {
+    font-size: 1rem;
+    color: #35bef0;
+} 
+
+
+/* mecanismo do accordion */
+.open--playlist .current-aula-card-titulo {
+    display: none;
+}
+
+.current-aula-card-link,
+.aula-card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+
+    display: flex;
+
+    background-color: #f1f5f9;
+    border: 1px solid #dbdbdb;
+    padding: 0.8rem 1.2rem;
+    border-radius: 11px;
+}
+
+
+.aula-card-link-active {
+    color: #35bef0;
+}
+
+
+.current-aula-card-conteudo,
+.aula-card-conteudo {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aula-card-titulo {
+    font-size: 1.2rem;
+}
+
+.icon { 
+    display: inline-block;
+    margin-top: 0.6rem;
+    width: 24px;
+    height: 24px;
+}
+
+.play-icon {
+    display: block;
+}
+
+.aula-card-link-active .play-icon,
+.pause-icon {
+    display: none;
+}
+
+.aula-card-link-active .pause-icon {
+    display: block;
+}
+
+
+
+
+
+
+/*====================*/
+/* - HELPER CLASSES - */
+/*====================*/
+
+/* Loading Spinner */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: #ccc;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #ccc;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+}
+.loader::before {
+  background-color: #000;
+  transform: scale(0.5) translate(-48px, -48px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}

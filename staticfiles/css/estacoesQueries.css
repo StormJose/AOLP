@@ -1,0 +1,34 @@
+
+
+/*================================*/
+/* - MAIOR QUE 768px (Desktops) - */
+/*================================*/
+
+@media (min-width: 48em) {
+   .estacoes-lista {
+
+        scrollbar-width: none;
+
+    }
+
+    .estacao-link {
+        font-size: 1.4rem;
+    }
+
+
+}
+
+
+
+/*=================================*/
+/* - MAIOR QUE 1024px (Desktops) - */
+/*=================================*/
+
+@media (min-width: 64em) {
+
+    .aulas-container {
+        grid-template-columns: 2fr 1fr;
+        column-gap: 1.2rem;
+    }
+}
+
