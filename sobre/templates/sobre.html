@@ -1,0 +1,398 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/sobre.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sobreQueries.css' %}" />
+{% endblock  %} 
+
+{% block content %}
+    <section class="sobre-hero--section"> 
+        <div class="hero-content">
+            <h1 class="heading-primaria">Lorem ipsum dolor amet.</h1>
+            <p class="hero-subtitle">Introduzindo uma nova forma...  {% lorem 18 w random %} </p>
+            <a href="#"> &darr; </a>
+        </div>
+    </section>
+    <section class="vision--section"> 
+        <div class="heading-container container">
+            <p class="subtitle gradient-text">Missão</p>
+            <h2 class="heading-secundaria">
+                Construindo o futuro...
+            </h2>
+        </div>
+        <div class="vision-content"> 
+            <p>
+                {% lorem 24 w %}
+            </p>
+            <p >
+                lorem ipsum dolor sit amet consectetur adipisicing elit sed do <span class="gradient-text"> eiusmod tempor incididunt ut labore et dolore magna aliqua</span> ipsa sapiente et nemo voluptatum
+            </p>
+        </div>
+    </section>
+    <section class="values--section">
+        
+    </section>
+    <section class="estacoes--section" id="estacoes"> 
+        <div class="heading-secundaria container">
+            <p class="subtitle gradient-text">Estações</p>
+            <h2 class="heading-secundaria"> Áreas de capacitação</h2>
+        </div>
+
+        <div class="estacoes-tabs-container container">
+            <ul class="estacoes-tabs--list"> 
+               
+                <li>
+                    <button class="tab-btn tab-btn--active" id="bpo" data-tab="1">
+                        Business Process Outsourcing
+                    </button>
+                </li>
+                <li>
+                    <button class="tab-btn" id="pmo" data-tab="2">
+                        Project Management
+                    </button>
+                </li>
+                <li>
+                    <button class="tab-btn" id="sdr" data-tab="3">
+                        Sales Development Representative
+                    </button>
+                </li>
+                <li>
+                    <button class="tab-btn" id="low-code" data-tab="4">
+                        Low Code
+                    </button>
+                </li>
+                     
+            </ul>
+            <div class="scroll-controls">
+            <button class="scroll-btn scroll-btn--left" aria-label="scroll-btn--right" id="scroll-left-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="scroll-icon--left">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
+                </svg>
+                
+            </button>
+            <button class="scroll-btn scroll-btn--right" aria-label="scroll-btn--left" id="scroll-right-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="scroll-icon--right">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                </svg>  
+            </button>
+            </div>
+        </div>
+        <div class="estacoes-contents container">
+            <div class="tab-content tab-content--1 tab-bpo">
+                <div class="tab-img-box">
+                    <img class="tab-content-img" src="{% static 'image/bpo.jpg' %}" alt=""/>
+                </div>
+                <p class="tab-description">
+                    Com o Business Process Outsourcing, a organização pode voltar seus olhos para o core do negócio, enquanto deixa as atividades secundárias nas mãos da Academy.
+                </p> 
+                
+                
+                <div class="ongoing-projects">
+                    <div class="project">
+                        <p class="project-status status-finished">
+                           Concluído
+                       </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <p class="project-status status-ongoing">
+                            Em andamento
+                        </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                   
+                </div>
+                
+            </div>
+            <div class="tab-content tab-content--2 tab-pmo hidden">
+                <div class="tab-img-box">
+                    <img class="tab-content-img" src="{% static 'image/pmo.webp' %}" alt=""/>
+                </div>
+                <p class="tab-description">
+                   De acordo com o Relatório CHAOS Standish, de 2009, 68% dos projetos não atingem as metas de tempo, custo ou escopo, ou seja, apenas 32% dos projetos são concluídos no prazo combinado, dentro do custo previsto e entregando valor — benefícios mensuráveis — para o negócio e para as partes interessadas.
+                </p>
+                <ul class="tab--list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                            PMO Corporativo
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        PMO Organizacional
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        PMO De Suporte
+                    </li>
+                      
+                </ul>
+        
+                 <div class="ongoing-projects">
+                    <div class="project">
+                        <p class="project-status status-finished">
+                           Concluído
+                       </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content tab-content--3 tab-sdr hidden">
+                <div class="tab-img-box">
+                    <img class="tab-content-img" src="{% static 'image/sdr.jpg' %}" alt=""/>
+                </div>    
+                <p class="tab-description">
+                    Se você tem interesse em se tornar um bom profissional de SDR, é de extrema importância ser capaz de fazer a leitura de diferentes cenários e saber se relacionar com as pessoas
+                </p>
+            
+                 <div class="ongoing-projects">
+                    <div class="project">
+                        <p class="project-status status-finished">
+                           Concluído
+                       </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <p class="project-status status-ongoing">
+                            Em andamento
+                        </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <p class="project-status status-ongoing">
+                            Em andamento
+                        </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content tab-content--4 tab-low-code hidden">
+                <div>
+                    <img class="tab-content-img" src="{% static 'image/low-code.jpg' %}" alt=""/>
+                </div>
+                <p class="tab-description">
+                    Low code é uma abordagem de desenvolvimento de software que requer pouca ou nenhuma codificação para construir aplicativos e processos. Em vez de usar linguagens de programação complexas, entenda como empregar interfaces visuais com lógica básica e recursos de arrastar e soltar em uma plataforma de desenvolvimento da modalidade.
+                </p> 
+                 <ul class="tab--list">
+                  
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                            Clientes
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Processos de Negócios
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Processamento de dados
+                    </li>
+                      
+                </ul>
+            
+                <div class="ongoing-projects">
+                    <div class="project">
+                        <p class="project-status status-finished">
+                           Concluído
+                       </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <p class="project-status status-ongoing">
+                            Em andamento
+                        </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <p class="project-status status-ongoing">
+                            Em andamento
+                        </p>
+                        <div>
+                            <h3 >Nome do projeto</h3>
+                            <p>cliente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+    </section>
+    <section class="instrutores--section">
+        <div class="heading-container container">
+            <p class="subtitle gradient-text">Conheça nossos instrutores</p>
+            <h2 class="heading-secundaria">Profissionais qualificados</h2>
+        </div>
+        <div class="instrutores container">
+            <div class="instrutor-card">
+                <img class="instrutor-img" src="{% static 'image/profiles/profile.jpg' %}" alt="pessoa"/>
+                <div class="instrutor-contact-box">
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                        </svg>
+
+                    </a>
+                </div>
+                <div class="instrutor-info"> 
+                    <div>
+                        <h3 class="instrutor-name">Nome do indivíduo</h3>
+
+                        <p class="instrutor-occupation">Gestor de Projetos</p>
+                        <p class="instrutor-description">
+                            {% lorem 12 w %}
+                        </p>
+                    </div>
+                    <a class="instrutor-link gradient-text" href="#">Mais &rightarrow; </a>
+                </div>
+            </div>
+            <div class="instrutor-card">
+                <img class="instrutor-img" src="{% static 'image/profiles/profile-2.jpg' %}" alt="pessoa"/>
+                <div class="instrutor-contact-box">
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                        </svg>
+
+                    </a>
+                </div>
+                <div class="instrutor-info"> 
+                    <div>
+                        <h3 class="instrutor-name">Nome do indivíduo</h3>
+
+                        <p class="instrutor-occupation">Gestor de Projetos</p>
+                        <p class="instrutor-description">
+                            {% lorem 12 w %}
+                        </p>
+                    </div>
+                    <a class="instrutor-link gradient-text" href="#">Mais &rightarrow; </a>
+                </div>
+            </div>
+            <div class="instrutor-card">
+                <img class="instrutor-img" src="{% static 'image/profiles/profile-3.jpg' %}" alt="pessoa"/>
+                <div class="instrutor-contact-box">
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                        </svg>
+
+                    </a>
+                </div>
+                <div class="instrutor-info"> 
+                    <div>
+                        <h3 class="instrutor-name">Nome do indivíduo</h3>
+
+                        <p class="instrutor-occupation">Gestor de Projetos</p>
+                        <p class="instrutor-description">
+                            {% lorem 12 w %}
+                        </p>
+                    </div>
+                    <a class="instrutor-link gradient-text" href="#">Mais &rightarrow; </a>
+                </div>
+            </div>
+            <div class="instrutor-card">
+                <img class="instrutor-img" src="{% static 'image/profiles/profile-4.jpg' %}" alt="pessoa"/>
+                <div class="instrutor-contact-box">
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    </a>
+                    <a class="instrutor-contact-link" href="#">
+                        <svg class="logo-link" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                        </svg>
+
+                    </a>
+                </div>
+                <div class="instrutor-info"> 
+                    <div>
+                        <h3 class="instrutor-name">Nome do indivíduo</h3>
+
+                        <p class="instrutor-occupation">Gestor de Projetos</p>
+                        <p class="instrutor-description">
+                            {% lorem 12 w %}
+                        </p>
+                    </div>
+                    <a class="instrutor-link gradient-text" href="#">Mais &rightarrow; </a>
+                </div>
+            </div>
+            
+        </div> 
+
+    </section>
+    <section class="cta--section"> 
+       
+            <div class="cta"> 
+                <h2 class="heading-secundaria">Começe a uma nova jornada hoje</h2>
+            
+                <a href="{% url 'estacoes:cursos' %}">Ver cursos</a>
+            </div>
+  
+    </section>
+
+
+ {% endblock %}
+
+{% block scripts %}
+    <!-- Importa Scripts específicos para esta página -->   
+    <script src="{%  static  'js/estacoesTabs.js' %}"></script>
+{% endblock %}

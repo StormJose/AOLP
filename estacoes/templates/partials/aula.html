@@ -1,0 +1,61 @@
+
+
+
+{% load static %}
+
+{% block extra_css %}
+  
+{% endblock %}
+
+
+{% block content %}
+
+{% if active_aula %}
+<div class="aula--wrapper-upper">
+    <header class="aula--header"> 
+        <a href="{% url 'estacoes:cursos' %}" class="voltar-link">
+            <svg class="voltar-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+            </svg>  
+        </a>
+        <progress id="curso--progress" value="50" max="100"></progress>
+        <p class="progress--label"></p>
+    </header>  
+    <div id="player" class="video-frame-wrapper">
+        <iframe  class="video-frame"  src="{{active_aula.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>        
+    
+</div>
+
+<div class="aula-text-box">
+    <h3 class="aula-selecionada-titulo">
+        <span class="heading-span">Aula 1:</span> <br>{{active_aula.titulo}}
+    </h3>
+
+    <p class="aula-selecionada-descrição">{{active_aula.descricao}}</p>
+
+</div>
+<div class="aula-related-content">
+    <h2 class="heading-terciaria">Conteudo</h2>
+    <p class="{{aula.descricao}}"></p>
+<div class="tabs-container">
+    <div class="tab-content about-tab">
+        <p class="class-duration"></p>
+        <p >Instrutor:  <span class="class-instructor">Fulano de Tal.</span></p>
+        <p>Data: <span class="class-date">23/11/2024</span></p>
+    </div>
+ 
+    <div class="tab-content">
+
+    </div>
+</div>
+</div>
+
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

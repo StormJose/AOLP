@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/globalQueries.css?v=1.0' %}" />
+
+
+    <!-- Scripts -->
+    <script defer src="{% static 'js/reusable.js?v=1.0' %}"></script>
+
+    <title>{% block title %}Academy One {% endblock %}</title>
+
+    <style>
+    
+        form {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+        }
+        
+    </style>
+
+</head> 
+
+<body>
+<main>
+    <div class="container">
+        <form action=" {% if estacao.pk %}{% url 'estacoes:estacao_edit' estacao.pk %} {% else %} {% endif %}" method="post">
+            {% csrf_token %}
+            <p>
+                <label for="id_titulo">nome:</label>
+                <input type="text" value="{% if estacao %} {{estacao.nome}} {% else %} {% endif %}" name="nome" maxlength="100" required>
+            </p>
+            <p>
+                <label for="id_video">descricao:</label>
+                <input type="text" value="{% if estacao %} {{estacao.descricao}} {% else %} {% endif %}" name="descricao" id="descricao" maxlength="200" required>
+            </p>
+        
+            <a class="btn btn--alt" href="{% url 'estacoes:estacao_list' %}">Voltar</a>
+            <button class="btn btn--main" type="submit">Confirmar</button>
+        </form>
+    </div>
+</main>
+
+    <footer class="footer">
+         
+        </footer>
+</body>
+
+
+{% block scripts %}
+
+{% endblock %}

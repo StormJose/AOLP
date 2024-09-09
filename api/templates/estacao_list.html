@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Estações</title>
+</head>
+<body>
+    <h1>Lista de Estações</h1>
+    <ul>
+        {% for estacao in estacoes %}
+            <li><a href="{% url 'estacao_detail' estacao.pk %}">{{ estacao.nome }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'estacao_create' %}">Criar nova estação</a>
+</body>
+</html>

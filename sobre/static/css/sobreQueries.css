@@ -1,0 +1,242 @@
+
+
+/*=========================================================*/
+/* (480px) DISPOSITIVOS MÓVEIS MAIORES / TABLESTS PEQUENOS */
+/*=========================================================*/
+
+@media (min-width: 30em) {
+
+
+   /* geral */
+
+    .paragraph {
+        max-width: 95%;
+    }
+
+
+    /* instrutores */
+   
+    .instrutores {
+        grid-template-columns: repeat(2, 0.8fr);
+        column-gap: 0.8rem;
+        row-gap: 3.2rem;
+    }
+
+
+
+    .instrutor-contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-link {
+        width: 24px;
+        height: 24px;
+    }
+
+   
+}
+
+/*==========================*/
+/* (600px) TABLETS PEQUENOS */
+/*==========================*/
+
+@media (min-width: 37.5em) {
+    .tab-content {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2.4rem;
+    }
+   
+    .tab-description {
+        max-width: 95%;
+        font-size: 1.4rem;
+    }   
+
+    .tab-content .ongoing-projects {
+        grid-column: 1 / 3;
+    }
+
+    .tab-content .tab--list {
+        grid-column: 1 / 3;
+    }
+
+    .tab--list {
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    .tab--list li {
+        font-size: 1.4rem;
+    }
+
+    .project {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    }
+
+    .project div {
+        min-width: 20rem;
+    }
+}
+
+
+
+/*========================================*/
+/* (768px) TABLETS E DISPOSITIVOS MAIORES */
+/*========================================*/
+
+@media (min-width: 48em) {
+   
+
+    /* hero */
+    .sobre-hero--section {
+        padding: 12.6rem 0;
+
+    }
+
+    .hero-content {
+        
+        padding: 12.6rem 1.8rem;
+       
+    }
+
+    .menu-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .heading-secundaria {
+        font-size: 3rem;
+    }
+
+
+    /* visão */
+    .vision-content p {
+        font-size: 1.9rem;
+        max-width: 90%;
+    }
+
+    .vision-content p:nth-child(2) {
+        font-size: 1.9rem;
+        max-width: 70%;
+    }
+
+
+
+    /* estacoes */
+    .tab-content {
+       row-gap: 4rem;
+    }
+
+
+    /* instrutores */
+
+    .instrutor-card {
+        display: grid;
+        grid-template-columns: 2.5fr 1.5fr;
+        row-gap: 1.8rem;
+        justify-items: center;
+    }
+
+    .instrutor-img {
+        max-width: 75%;
+    }
+ 
+    .instrutor-contact-box {
+        justify-self: start;
+    }
+
+  
+    .instrutor-info {
+        padding-left: 2.8rem;
+    }
+
+}
+
+@media (min-width: 64em) {
+
+    /* visão */
+    .vision--section {
+        padding: 9.6rem 0;
+    }
+
+    /* estacoes */
+
+    .estacoes--section {
+        padding: 9.6rem 0;
+    }
+
+    .estacoes-tabs--list {
+        justify-content: space-evenly;
+        background-color: #fff;
+    }
+
+    .scroll-btn {
+        display: none;
+    }
+
+    .hero-subtitle {
+        max-width: 90%;
+    }
+
+    .tab-img-box {
+        justify-content: flex-start;
+    }
+
+    .tab-content-img {
+      
+        max-width: 85%;
+    }
+
+    .tab-description {
+        font-size: 1.9rem;
+        align-self: center;
+    }
+
+    .tab-content .tab--list {
+        grid-column: 1;
+        justify-content: flex-start;
+    }
+
+    .ongoing-projects {
+        gap: 4.4rem;
+    }
+
+    .project-status {
+        font-size: 1.4rem;
+    }
+
+    .project {
+        flex-grow: 1;
+        gap: 1.2rem;
+    }
+
+    .project div {
+        max-width: 100%;
+    }
+
+    .project h3 {
+        font-size: 1.6rem;
+    }
+
+    .project p {
+        font-size: 1.2rem;
+    }
+
+
+    /* instrutores */
+
+   .instrutores {
+    justify-items: center;
+   }
+
+   .instrutores--section {
+    padding: 9.6rem 0;
+   }
+
+   /* cta */
+   .cta {
+       padding: 9.6rem 1.8rem;
+    }
+}

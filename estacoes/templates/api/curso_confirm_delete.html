@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ curso.nome }} - Deleção de Curso</title>
+</head>
+<body>
+    <form action="{% url 'estacoes:curso_delete' pk=curso.pk %}" method="delete">
+        {% csrf_token %}
+        {% comment %} <input type="hidden" name="pk" value="{{ aula.pk }}"> {% endcomment %}
+        <p>Tem certeza de que deseja excluir "{{ curso.nome }}"? Esta ação é irreversível.</p>
+        <button type="submit">Confirmar deleção</button>
+</form>
+</body>
+</html>

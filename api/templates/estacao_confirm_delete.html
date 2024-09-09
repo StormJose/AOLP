@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar Exclusão</title>
+</head>
+<body>
+    <h1>Confirmar Exclusão</h1>
+    <p>Você tem certeza que deseja excluir a estação "{{ estacao.nome }}"?</p>
+    <form action="{% url 'estacao_delete' estacao.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirmar">
+    </form>
+</body>
+</html>

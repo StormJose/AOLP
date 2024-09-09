@@ -1,0 +1,442 @@
+
+
+
+.heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 75%;
+    margin: 0;
+}
+
+
+/* .sobre-dropdown {
+    background: url('../image/hero.png'), linear-gradient(#35bef0c0, #35bef0ef);
+    border: none !important;
+} */
+
+.nav-item {
+   
+    color: #F1F5F9 ;
+}
+
+.sobre-hero--section {
+    padding: 9.6rem 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(#2586a957, rgba(29, 39, 125, 0.589)), url('../image/hero.png');
+    background-size: cover;
+    height: 80vh; /* Full viewport height */
+    color: #f1f5f9;
+}
+
+.sobre-hero--section h1 {
+    max-width: 75%;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 0;
+}
+
+.hero-content {
+    margin: 0 auto;
+    max-width: 90rem;
+    padding: 9.6rem 1.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #dbdbdb;
+}
+
+
+.hero-content a {
+    color: inherit;
+    font-size: 1.6rem;
+}
+
+
+.hero-title {
+    animation: fadeInUp 1s ease-out;
+}
+
+
+
+/*===================*/
+/* - VISÃO SECTION - */
+/*===================*/
+
+
+.vision--section {
+    padding: 4.8rem 0;
+}
+
+
+
+.vision-content {
+    padding: 0 1.8rem;
+    margin: 0 auto;
+    max-width: 130rem;
+
+}
+
+.vision-content p {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+
+
+/*======================*/
+/* - ESTACOES SECTION - */
+/*=====+================*/
+
+
+.estacoes--section {
+    padding: 4.8rem 0;
+}
+
+
+.estacoes-tabs-container {
+    
+    padding: 1.8rem 1.8rem 2.4rem 1.8rem;
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 50px;
+    z-index: 1000; 
+    
+    
+}
+
+.estacoes-tabs--list {
+
+    scrollbar-width: none;
+    
+    border-radius: 11px;
+    background-color: #f1f5f9;
+    list-style: none;
+    overflow: auto;
+    
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 0.4rem;
+    box-shadow: inset 0 0 10px 0.1px #dddddd66;
+    
+}
+
+.tab-btn {
+    cursor: pointer;
+    
+    font-family: inherit;
+    color: #969696;
+    border: none;
+    border-radius: 11px;
+    background-color: #fff;
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+    white-space: nowrap;
+} 
+
+.tab-btn--active {
+    font-weight: 600;
+}
+
+
+.tab-btn--active#bpo {
+    color: #F2B544;
+}
+
+.tab-btn--active#pmo {
+    color: #03A64A;
+}
+
+.tab-btn--active#sdr {
+    color: #35BEF0;
+}
+
+.tab-btn--active#low-code {
+    color: #BE53FF;
+}
+
+
+/* Posicionamento dos botões de deslize */
+
+
+.scroll-controls {
+    position: relative;
+    justify-content: space-between;
+    align-items: center ;
+    top: 10%;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: -54px;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.scroll-btn--left {
+    left: -20px;
+    
+}
+
+.scroll-btn--right {
+
+    right: -20px;
+    
+}
+
+
+.tab-content {
+    display: grid;
+    row-gap: 3.2rem;
+}
+
+.tab-img-box {
+    display: flex;
+    justify-content: center;
+}
+
+.tab-content-img {
+    border-radius: 11px;
+    max-width: 100%;
+}
+
+
+
+
+.tab-description::before {
+    z-index: 100;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    padding: 0.1rem 1.8rem;
+    background-color: #1D267D;
+    font-size: 1.2rem;
+    color: #1d267D;
+    top: -12px;
+    left: 0;
+}
+
+.tab-description {
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.tab-description::after {
+    z-index: 100;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    padding: 0.1rem 1.8rem;
+    background-color: #1D267D;
+    font-size: 1.2rem;
+    color: #1d267D;
+    bottom: -13px;
+    right: 0;
+}
+
+.tab--list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.tab--list li {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+}
+
+.tab-pmo .tab--list svg {
+    color: #03A64A;
+    width: 24px;
+    height: 24px
+}
+
+.tab-low-code .tab--list svg {
+    color: #BE53FF;
+    width: 24px;
+    height: 24px        
+}
+
+.ongoing-projects {
+    display: flex;
+    overflow-x: auto;
+    gap: 3.2rem;
+}
+
+.project {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.project div {
+    padding: 1.4rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 11px;
+}
+
+
+.project-status {
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 21px;
+    
+    /* flex */
+    align-self: flex-start;
+}
+
+.status-finished {
+    color: #37b24d;
+    background-color: #ebfbee;
+
+}
+
+.status-ongoing {
+    color: #f59f00;
+    background-color: #fff9db;
+}
+
+
+
+
+/*=========================*/
+/* - INSTRUTORES SECTION - */
+/*=========================*/
+
+.instrutores--section {
+    padding: 4.8rem 0;
+}
+
+.instrutores {
+    padding: 0 2.8rem;
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 3.2rem;
+}
+
+.instrutor-card {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    row-gap: 1.8rem;
+
+}
+
+.instrutor-img {
+    max-width: 90%;
+
+    box-shadow: -7px -7px 0.1px 2px #1D267D;
+}
+
+.instrutor-contact-box {
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+.logo-link {
+    color: #000;
+    width: 32px;
+    height: 32px;
+}
+
+.logo-link:hover,
+.logo-link:active {
+    stroke: #1D267D;
+    color: #1D267D;
+    fill: #1D267D;
+
+}
+
+.instrutor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.instrutor-name {
+    font-size: 1.8rem;
+    color: #1D267D;
+    margin-bottom: 1.2rem;
+}
+
+.instrutor-occupation {
+    color: #4276BD;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.instrutor-description {
+    max-width: 90%;
+    font-size: 1.4rem;
+}
+
+.instrutor-link {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+/*============================*/
+/* - CALL TO ACTION SECTION - */
+/*============================*/
+
+
+.cta--section {
+    padding: 4.8rem 0;
+    background-color: #1d267D;
+
+}
+
+.cta {
+    padding: 4.8rem 1.8rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.4rem;
+    text-align: center;
+    color: #f1f5f9;
+}
+
+.cta a {
+    text-decoration: none;
+    background-color: #f1f5f9;
+    border-radius: 11px;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    justify-self: center;
+    color: #1d267D;
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

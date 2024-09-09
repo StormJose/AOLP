@@ -1,0 +1,279 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==== */
+/* Body */
+/* ==== */
+
+
+/* ========== */
+/* Formulario */
+/* ========== */
+
+
+
+.logo--alt-2 {
+    filter:brightness(10%);
+}
+
+.form-cadastro{
+    padding: 0;
+    /* background-image:  url(IMGS/login-cadastro.jpg); */
+    /* background-size: cover;
+    background-position:center; */
+
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    height: 110vh;
+    gap: 1.2rem;
+    
+    border: none;
+   
+}
+
+
+.text-login {
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+}
+
+
+
+.field {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.field input {
+    transition: 0.3s all;
+    border: 1.55px solid #222;
+    width: 32rem;
+}
+
+.field input:focus {
+    outline: 1.55px solid #1D267D;
+}
+
+
+.field label {
+    font-size: 1.6rem;
+}
+
+.container.instrutor-estudante {
+    padding: 0.8rem 1.8rem 0.8rem 1.8rem;
+}
+
+
+.radio-fields-box {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.radio-field {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+}
+
+.radio-field label {
+    font-size: 1.6rem;
+}
+
+.radio-field input[type="radio"] {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.radio-field input[type="radio"]:checked {
+    color:#1D267D;
+}
+
+
+
+/* Código de confirmação de instrutor */
+
+.code-input-field {
+    display: none;
+}
+
+.code-input {
+    font-size: 1.6rem;
+    width: 4.5rem;
+    height:4.5rem;
+    padding: 1.2rem;
+    border: 1.55px solid #222;
+    text-align: center;
+}
+
+.code-input:focus {
+    outline: 1.55px solid #1D267D;
+}
+
+.inputs {
+    border: 1px solid transparent
+}
+
+.inputs:focus {
+    outline: 2px solid #1D267D;
+}
+
+.session--error,
+.mensagem--erro {
+    flex-shrink: 2;
+    margin-left: 1.2rem;
+    font-size: 1.2rem;
+    color: red;
+}
+
+.btn-radio-1 .btn-radio-2{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+form img{
+    margin-top: 2.5rem;
+}
+
+input {
+    flex-grow: 1;
+    font-size: 1.4rem;
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    width: 30rem;
+   
+    padding: 0.8rem 0 0.8rem 1.2rem;
+    margin: 0.1rem;
+}
+
+.container-criar-conta{
+    margin-top: 16%;
+}
+
+.container-criar-conta a {
+    text-decoration: none;
+    color:#1D267D;
+}
+
+.btn--register-login {
+    cursor: pointer;
+    font-family: 'Poppins';
+    
+    /* Flex necessário devido a interção do spinner de carregamento */
+    background-color: #35BEF0;
+    color: #f1f3f5;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    gap: 1.2rem;
+    letter-spacing: 0.2px;
+    border: none;
+    font-weight: 600;
+    
+    margin: 0;
+    border-radius: 10px;
+    
+    padding: 1rem 0.8rem;
+
+    transition: 0.3s all;
+}
+
+.btn--register-login:hover,  
+.btn--register-login:hover{
+    
+    border: none;
+    background-color: #f1f3f5;
+    color: #2d99c0;
+   
+    
+    margin: 0;
+    border-radius: 10px;
+}
+
+
+.spanError{
+    font-size: 3.4rem;
+    color: red;
+    display: none;
+}
+
+
+.outer-ring {
+    display: flex;
+    justify-content: center;
+  
+  color: #fff;
+  border-radius: 50%;
+  border: 1.75px solid #eee;
+  border-top: 2px solid #35BEF0;
+  z-index: 9999;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  box-shadow: 1px rgba(0, 0, 0, 0.2);
+  animation: spiner 1s infinite linear;
+}
+
+@keyframes spiner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ====== */
+/* footer */
+/* ====== */
+
+
+.footer {
+    background-color: #1D267D;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+}
+
+.footer img{
+    width: 17rem;
+    height:auto;
+
+    margin: 0;
+}
+
+.container-footer{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        padding: 1.5rem;
+    }
+}

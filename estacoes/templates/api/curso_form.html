@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/globalQueries.css?v=1.0' %}" />
+    
+    {% block extra_css %}
+        <link rel="stylesheet" href="{% static 'css/geral.css' %}"></link>
+
+    {% endblock %}
+
+    <!-- Scripts -->
+    <script defer src="{% static 'js/reusable.js?v=1.0' %}"></script>
+
+    <title>{% block title %}Academy One {% endblock %}</title>
+
+    <style>
+
+        form {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+    </style>
+
+</head> 
+<body>
+   
+    <main>
+            <div class="container">
+                <form method="post">
+                   {% csrf_token %}
+                    <input name="nome" value="{% if curso %} {{curso.nome}} {% else %}  {% endif %}" type="text" placeholder="nome" required>
+                    <input name="descricao" value="{% if curso %} {{curso.descricao}} {% else %}  {% endif %}" type="text" placeholder="descrição" required>
+                    <select {% if curso %} value={{curso.estacao}} {% else %} {% endif %} name="estacao" id="id_estacao" required>
+                        <option  selected>Escolha a estação</option>
+                        {% for estacao in estacoes %}
+                            <option value="{{ estacao.id }}">{{ estacao.nome }}</option>
+                        {% endfor %}
+                    </select>
+                    <a class="btn btn--alt" href="{% url 'estacoes:curso_list' %}" >Voltar</a>
+                    <button type="submit" class="btn btn--main" >Confirmar</button>
+                </form>
+            </div>
+
+    </main>
+    <footer class="footer">
+       
+      </footer>
+ {% block scripts %}
+  {% endblock %}
+</body>
+</html>

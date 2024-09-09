@@ -1,0 +1,220 @@
+
+
+/*=====================================*/
+/* (368px) DISPOSITIVOS MÓVEIS PADRÃO  */
+/*=====================================*/
+
+@media (min-width: 23em) {
+
+     .aulas-container {
+        padding: 2.4rem 1.8rem;
+        column-gap: 2rem;
+        
+    }
+
+}
+
+
+
+/*================================*/
+/* - MAIOR QUE 768px (Desktops) - */
+/*================================*/
+
+@media (min-width: 48em) {
+
+    .aulas-container {
+        padding: 2.4rem 1.8rem;
+        column-gap: 2rem;
+        
+    }
+
+    /* progresso */
+    #curso--progress {
+        
+    height: 4px;
+   
+    }
+
+
+    /* aula */
+    .aula--wrapper-upper {
+    /* Safari */
+    position: -webkit-static; 
+
+    position: static; 
+    top: 0; 
+    z-index: 1000; 
+
+
+    }
+
+
+    /* video frame */
+    .video-frame-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .video-frame {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .aulas-sidebar-nav{
+        /* Redefinindo os estilos de navegação */
+        z-index: 1000;
+        position: static;
+    
+        border-radius: 0;
+        margin: 0;
+    }
+
+
+    .aulas-sidebar--list {
+        gap: 1.4rem;
+    }
+
+
+    .sidebar-btn {
+       
+        font-size: 1.4rem;
+        flex-direction: row;
+        gap: 0.8rem;
+ 
+    }
+
+    .sidebar-btn[aria-label="Lista de reprodução"] {
+        display: block;
+    }
+
+    .sidebar-btn span {
+        display: none
+    }
+
+    .sidebar-icon {
+        color: #495057;
+        width: 24px;
+        height: 24px;
+    }
+
+    .sidebar-btn--active {
+        color: inherit;
+        padding-bottom: 0.2rem;
+        /* Apenas para telas maiores */
+        border-bottom: 2px solid #35bef0;
+        color: #35bef0;
+    }
+
+
+    /* Playlist */
+
+    .aulas-sidebar {
+        max-height: 50rem;
+    }
+
+    .aulas-playlist {
+        padding: 0 1.8rem;
+
+        z-index: 999;
+        position: static;
+        bottom: 0;
+    
+        filter: blur(100);
+    }
+
+    .current-aula-card-link, 
+    .playlist-card-link {
+        padding: 0.8rem 1.2rem;
+        background-color: none;
+        border: none;
+    }
+
+    .playlist-card-titulo {
+        font-size: 1.4rem;
+    }
+
+    .playlist-card-duration {
+        font-size: 1.2rem;
+    }
+
+}
+
+
+
+/*=================================*/
+/* - MAIOR QUE 1024px (Desktops) - */
+/*=================================*/
+
+@media (min-width: 64em) {
+
+    .aulas-container {
+        margin: 0 auto;
+        max-width: 180rem;
+        padding: 2.4rem 1.8rem;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+        
+    }
+
+    /* HEADER */
+     
+    .aulas--header {
+        padding: 1.8rem 0;
+        background-color: #333;
+        color: #f1f5f9;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        column-gap: 1.2rem;
+    }
+
+
+    /* sidebar */
+
+     .aulas-sidebar--list {
+        justify-content: flex-start;
+
+    }
+
+
+    /* playlist */
+    .aulas-playlist {
+        padding: 1.8rem 1.8rem 3.2rem 0;
+        position: static;
+        bottom: 0;
+        filter: blur(0);
+
+    
+        border-radius: 11px;
+    }
+
+    .current-aula span {
+        font-size: 1.4rem;
+    }
+
+    .open--playlist .close--playlist-icon {
+        display: none
+    }
+
+    
+   
+    .current-aula-card-link,
+    .playlist-card-link {
+    
+        background: #fff;
+        border: none;
+
+        padding: 0.8rem 1.2rem;
+    
+    }
+
+}

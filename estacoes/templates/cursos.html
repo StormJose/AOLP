@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Academy One &dash; Cursos{% endblock %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/cursos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estacoesQueries.css' %}">
+   
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'js/cursos.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<section class="section--cursos">
+    <div class="cursos-box">
+        <div class="heading-container-wrapper">
+            <div class="container heading-container"> 
+                <h1 class="heading-primaria">Cursos</h1>
+            </div>
+        </div>
+        <div class="estacoes-lista-wrapper">
+            <ul class="estacoes-lista">
+                <a class="estacao-link estacao-link-active" href="{% url 'estacoes:cursos' %}">
+                    <li class="estacao-tab ">
+                        Todos
+                    </li>
+                </a>
+                {% for estacao_tag in estacoes_tags %}
+                    <a class="estacao-link" href="{% url 'estacoes:curso' estacao_nome=estacao_tag.nome %}" data-id="{{ estacao_tag.nome }}">
+                        <li class="estacao-tab" id="estacao-tab-{{ estacao_tag.nome }}">
+                            {{ estacao_tag.nome }}
+                        </li>
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="courses">
+         {% include 'partials/cursos_list.html' %}
+        </div>
+
+        {% comment %} {% for estacao in estacoes %}
+            <div class="estacao container" id="{{ curso.nome }}-box">
+                <div class="lista">
+                    <h3 class="heading-terciaria">{{ estacao.nome }}</h3>
+                    {% if estacao.nome == "GROG"  %}
+
+                    <span class="destaque-label">Destaque</span>
+                    {% else %}
+                    {% endif %}
+                    <div id="{{ curso.id }}">
+                        <ul class="cursos-lista">
+                            {% for curso in estacao.cursos.all %}
+                            <li> 
+                                <a href="{% url 'aulas' curso.id %}"> 
+                                    <div class="card">
+                                        <!-- <img class="card-img" src="{% static 'imgs/course-2.png' %}"/> -->
+                                        <h3 class="card-titulo">{{ curso.nome }}</h3>
+                                        <p>{{ curso.descricao }}</p>
+                                           
+                                    </div>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <a class="fa-solid fa-arrow-down " id="{{ estacao.nome }}"></a>
+            </div>
+        {% endfor %} {% endcomment %}
+
+        
+    </div>
+</section>
+
+<section class="section--cta">
+    <div class="cta container">  
+        <div class="heading-container">
+            <h2 class="heading-secundaria"> 
+                Conheça nossas estações e o que temos desenvolvido
+            </h2>
+        </div>
+        <img class="cta-img" src="{% static 'imgs/ilustration-cta.png' %}"/>
+        <a class="btn btn--cta" href="{% url 'sobre' %}">Explorar</a>
+    </div>
+</section>
+{% endblock %}
+
+
+

@@ -1,0 +1,39 @@
+
+
+
+{% load static %}
+
+{% block extra_css %}
+  
+{% endblock %}
+
+
+{% block content %}
+
+<div class="tab-content activities-tab " id="tab-content-1">
+    <div class="questions-box">
+        <ul class="questions--list">
+            <li>
+                <div class="question">
+                    
+                    <h3 class="question"></h3>
+                    <p class="questions-text">{% lorem 14 w %} </p>
+                    
+                </div>
+            </li>
+        </ul>
+        <div class="questions-controls">
+            <button  class="btn-previous"></button>
+
+            <button class="btn-next">Confirmar</button> 
+        </div>
+    </div>
+
+</div>
+    
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/globalQueries.css?v=1.0' %}" />
+    
+
+    <!-- Scripts -->
+    <script defer src="{% static 'js/reusable.js?v=1.0' %}"></script>
+
+    <title>{% block title %}Academy One {% endblock %}</title>
+
+    
+    <style>
+
+        .container {
+            display: grid;
+            grid-template-columns: auto;
+            row-gap: 1.8rem;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 3.2rem;
+            margin-bottom: 4.4rem;
+        }
+
+        header img {
+            width:44px;
+            height: auto;
+        }
+
+        .subtitulo {
+            font-size: 1.4rem;
+        }
+    
+        ul {
+            list-style: none;
+
+        }
+
+
+        ul li {
+            display: flex; 
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .visitar-aula--link {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            color: inherit;
+            border: 1.25px solid transparent;
+            padding: 0.6rem 0.6rem 0 0.6rem;
+            border-radius: 7px;
+        }
+        
+        .visitar-aula--link:hover {
+            color: #35BEF0;
+            border: 1.25px solid #dbdbdb;
+        }
+
+
+        .visitar-aula--link:hover .label {
+            display: block;
+            pointer-events: none;
+        }
+
+        .label {
+            display: none;
+            position: absolute;
+            bottom: 88%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333; 
+            color: #fff; 
+            padding: 5px;
+            border-radius: 4px;
+            white-space: nowrap; 
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+
+
+
+        ul li div {
+            cursor: pointer;
+            
+            border: 1.25px solid transparent;
+            border-radius: 11px;
+            font-size: 1.6rem;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+            gap: 3.2rem;
+         
+            margin-bottom: 0.6rem;
+            padding: 0 1.4rem;
+        }
+
+        ul li div span {
+            flex-grow: 1;
+        }
+        
+        ul li div:hover {
+            border: 1.25px solid #dbdbdb;
+        }
+
+        .curso-titulo {
+            margin-left: auto;
+        }
+
+        .form-botoes-de-acao {
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            gap: 1.6rem;            
+        }
+        
+        
+        ul li:hover .form-botoes-de-acao {
+            opacity: 1;
+            visibility: visible;
+            margin-left: auto;
+        }
+
+        .btn {
+            color: #f1f5f9;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-shrink:1;
+            gap: 0.8rem;
+
+            /* grid */
+
+            justify-self: start;
+        }
+
+       .btn--editar {
+            color: #333; 
+       }
+
+        .btn--editar:hover {
+
+            color: #35bef0;
+        }
+
+
+    
+        .btn--excluir {
+            color: #fa5252;
+        }
+
+        .btn--excluir:hover,
+        .btn--excluir:active {
+            color: #e03131;
+        }
+
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            
+        }
+        
+
+
+       
+    </style>
+
+</head> 
+<body>
+   
+    <main>
+        <section class="container">
+            <header>
+                <img src="{% static 'imgs/logo-simplified.png' %}" alt="Logo da Plataforma">
+                <p class="subtitulo">Gestão de conteúdo</p>
+            </header>
+            <div class="container">
+
+                <h2 class="heading-secundaria">Aulas</h2>
+            </div>
+            <div class="container">
+                <ul>
+                    {% for aula in aulas %}
+                        <li > 
+                            <a class="visitar-aula--link" href="{% url 'estacoes:aula' aula.curso aula.titulo %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                </svg>
+                                <div class="label">Visitar aula</div>
+                            </a>
+                            <div> 
+                                <span>{{aula.titulo}}</span> 
+                                <span class="curso-titulo"><strong>curso:</strong> {{aula.curso}}</span>
+                                <span class="form-botoes-de-acao"> 
+                                    <a class="btn btn--editar" href="{% url 'estacoes:aula_edit' aula.pk %}">Editar</a>
+                                    <a class="btn btn--excluir" href="{% url 'estacoes:aula_delete' aula.pk %}">Excluir</a>
+                                </span>
+                            </div>
+                            
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a class="btn btn--main" href="{% url 'estacoes:aula_create' %}">
+                    Adicionar aula
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                </a>
+                </div>
+            {% comment %} Quando houver o perfil de usuário {% endcomment %}
+            {% comment %} <a href="{% url 'perfil' %}">Voltar</a> {% endcomment %}
+           
+        </section>
+    </main>
+    <footer class="footer">
+       
+      </footer>
+ {% block scripts %}
+  {% endblock %}
+</body>
+</html>

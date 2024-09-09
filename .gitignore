@@ -1,0 +1,30 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+
+# Django-specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+media/
+staticfiles/
+
+# VS Code
+.vscode/
+
+
+# Coverage reports
+.coverage
+.coverage.*
+*.cover
+*.py,cover
+nosetests.xml
+coverage.xml
+*.log
+
+ts
+.env
+

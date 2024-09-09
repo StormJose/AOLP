@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/globalQueries.css?v=1.0' %}" />
+    
+
+    <!-- Scripts -->
+    <script defer src="{% static 'js/reusable.js?v=1.0' %}"></script>
+
+    <title>{% block title %}Academy One {% endblock %}</title>
+
+    
+    <style>
+
+        .subtitulo {
+            font-size: 1.4rem;
+        }
+    
+        ul {
+            list-style: none;
+
+        }
+
+        ul li {
+            cursor: pointer;
+            
+            border: 1.25px solid transparent;
+            border-radius: 11px;
+            font-size: 1.6rem;
+            display: flex; 
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 0.6rem;
+            padding: 0 1.4rem;
+        }
+        
+        ul li:hover {
+            border: 1.25px solid #dbdbdb;
+        }
+
+
+        .form-botoes-de-acao {
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            gap: 1.6rem;            
+            margin-left: auto;
+        }
+        
+        
+        ul li:hover .form-botoes-de-acao {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .btn {
+            color: #f1f5f9;
+            display: flex;
+            jusify-content: flex-start;
+            align-items: center;
+            flex-shrink:1;
+            gap: 0.8rem;
+        }
+
+       .btn--editar {
+            color: #333; 
+       }
+
+        .btn--editar:hover {
+
+            color: #35bef0;
+        }
+
+
+    
+        .btn--excluir {
+            color: #fa5252;
+        }
+
+        .btn--excluir:hover,
+        .btn--excluir:active {
+            color: #e03131;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+       
+    </style>
+
+</head> 
+<body>
+   
+    <main>
+        <section class="container">
+            <p class="subtitulo">Gestão de conteúdo</p>
+            <h2 class="heading-secundaria">Cursos</h2>
+            <div class="container">
+                <ul>
+                    {% for curso in cursos %}
+                        <li>
+                            <span> {{curso.nome}}</span> 
+                            <span class="form-botoes-de-acao"> 
+                                <a class="btn btn--editar" href="{% url 'estacoes:curso_edit' curso.pk %}">Editar</a>
+                                <a class="btn btn--excluir" href="{% url 'estacoes:curso_delete' curso.pk %}">Excluir</a>
+                            </span>
+                            
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                {% comment %} TO DO: IMPLEMENTAR VISUALIZAÇÃO DAS AULAS DE CADA CURSO COMO ATALHO PARA EDIÇÃO {% endcomment %}
+                <a class="btn btn--main" href="{% url 'estacoes:curso_create' %}">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                    Adicionar curso</a>
+            </div>
+            {% comment %} Quando houver o perfil de usuário {% endcomment %}
+            {% comment %} <a href="{% url 'perfil' %}">Voltar</a> {% endcomment %}
+           
+        </section>
+    </main>
+    <footer class="footer">
+       
+      </footer>
+ {% block scripts %}
+  {% endblock %}
+</body>
+</html>

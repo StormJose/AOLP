@@ -1,0 +1,56 @@
+
+
+/*================================*/
+/* - MAIOR QUE 768px (Desktops) - */
+/*================================*/
+
+@media (min-width: 48em) {
+   .estacoes-lista {
+
+        scrollbar-width: none;
+
+    }
+
+    .estacao-link {
+        font-size: 1.4rem;
+    }
+
+
+    /* cta */
+    .cta .btn--cta {
+        justify-self: center;
+        padding: 1rem 4.4rem
+    }
+
+
+}
+
+
+
+/*=================================*/
+/* - MAIOR QUE 1024px (Desktops) - */
+/*=================================*/
+
+@media (min-width: 64em) {
+
+  .estacoes-lista-wrapper {
+    margin : 0 auto;
+    max-width: 130rem;
+  }
+
+  .cursos-lista {
+
+    grid-template-columns: auto;
+    justify-items: start;
+    column-gap: 2.8rem;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.cta .heading-secundaria {
+
+    max-width: 85%;
+}
+
+}
+
