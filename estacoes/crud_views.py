@@ -23,7 +23,7 @@ def estacao_create(request):
         form = EstacaoForm(request.POST)
         if form.is_valid():
             estacao = form.save()
-            return redirect('estacoes:estacao_list', pk=estacao.pk)
+            return redirect('estacoes:estacao_list')
     else:
         form = EstacaoForm()
         context = {
@@ -51,7 +51,7 @@ def estacao_delete(request, pk):
 
     if request.method == "POST":
         estacao.delete()
-        return redirect('estacao_list')
+        return redirect('estacoes:estacao_list')
     
     context = {
         'conteudo': estacao,
@@ -82,7 +82,7 @@ def curso_create(request):
         form = CursoForm(request.POST)
         if form.is_valid():
             curso = form.save()
-            return redirect('estacoes:cursos')
+            return redirect('estacoes:curso_list')
         
     else:
         form = CursoForm()
@@ -95,19 +95,19 @@ def curso_create(request):
 
 def curso_edit(request, pk):
     curso = get_object_or_404(Curso, pk=pk)
-    if request.method == "PATCH":
+    if request.method == "POST":
         form = CursoForm(request.POST, instance=curso)
         if form.is_valid():
             curso = form.save()
-            return redirect('estacoes:cursos', pk=curso.pk)
+            return redirect('estacoes:curso_list')
     else:
         form = CursoForm(instance=curso)
 
-        context = {
-                    'curso': curso,
-                    'estacoes': Estacao.objects.all(),
-                    'form': form
-                }
+    context = {
+            'curso': curso,
+            'estacoes': Estacao.objects.all(),
+            'form': form
+        }
 
     return render(request, 'api/curso_form.html', context)
 
@@ -115,7 +115,7 @@ def curso_delete(request, pk):
     curso = get_object_or_404(Curso, pk=pk)
     if request.method == "POST":
         curso.delete()
-        return redirect(reverse('estacoes:cursos'))
+        return redirect(reverse('curso_list'))
     
     context = {
         'conteudo': curso,

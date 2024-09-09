@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
+<head>
     {% load static %}
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     
     <link rel="stylesheet" href="{% static 'css/geral.css' %}" />
     <link rel="stylesheet" href="{% static 'css/globalQueries.css?v=1.0' %}" />
-    
-    {% block extra_css %}
-        <link rel="stylesheet" href="{% static 'css/geral.css' %}"></link>
+    <link rel="stylesheet" href="{% static 'css/gestao-de-conteudo/styles.css' %}">
 
-    {% endblock %}
 
-    <!-- Scripts -->
-    <script defer src="{% static 'js/reusable.js?v=1.0' %}"></script>
-
-    <title>{% block title %}Academy One {% endblock %}</title>
-
-    <style>
-
-        form {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-    </style>
-
-</head> 
+    <title> {{curso.nome}} - Edição </title>
+</head>
 <body>
    
-    <main>
-            <div class="container">
-                <form method="post">
-                   {% csrf_token %}
-                    <input name="nome" value="{% if curso %} {{curso.nome}} {% else %}  {% endif %}" type="text" placeholder="nome" required>
-                    <input name="descricao" value="{% if curso %} {{curso.descricao}} {% else %}  {% endif %}" type="text" placeholder="descrição" required>
-                    <select {% if curso %} value={{curso.estacao}} {% else %} {% endif %} name="estacao" id="id_estacao" required>
-                        <option  selected>Escolha a estação</option>
-                        {% for estacao in estacoes %}
-                            <option value="{{ estacao.id }}">{{ estacao.nome }}</option>
-                        {% endfor %}
-                    </select>
-                    <a class="btn btn--alt" href="{% url 'estacoes:curso_list' %}" >Voltar</a>
-                    <button type="submit" class="btn btn--main" >Confirmar</button>
-                </form>
-            </div>
+    <div class="formulario">
+        <div class="title">
+            <h2 class="heading-secundaria">Editar Curso</h2>
+        </div>
+    <form action="{% url 'estacoes:curso_list' %}" method="POST">
+        {% csrf_token %}
+        <!-- Campo oculto para simular o método PUT -->
+        <!-- <input type="hidden" name="_method" value="PUT"> -->
 
-    </main>
-    <footer class="footer">
+        <label for="nome">Curso:</label>
+        <input type="text" value="{% if curso %} {{curso.nome}} {% else %} {% endif %}" id="nome" name="nome" required>
+    
+        <label for="descricao">Descrição:</label>
+        <input type="text" value="{% if curso %} {{curso.descricao}} {% else %} {% endif %}" id="descricao" name="descricao" required>
        
-      </footer>
- {% block scripts %}
-  {% endblock %}
+        <label for="estacao">Estação:</label>
+        <select id="estacao" name="estacao" required>
+            <option value="" disabled selected>Selecione uma estação</option>
+            {% for estacao in estacoes %}
+                <option value="dev">{{estacao.nome}}</option>
+            {% endfor %}
+        </select>
+       
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data">
+
+        <button type="submit" class="btn btn--main" >Enviar</button>
+          </form>
+    </div>
+
 </body>
 </html>

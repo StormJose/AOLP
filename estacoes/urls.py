@@ -23,8 +23,6 @@ urlpatterns = [
     
     ## cursos
 
-
-
     path('cursos/', views.cursos, name='cursos'),
     path('<str:estacao_nome>/cursos/', views.curso, name='curso'),
     # instrutor / admin
