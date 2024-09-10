@@ -17,8 +17,7 @@ def estacao_detail(request, pk):
     return render(request, 'api/estacao_detail.html', {'estacao': estacao})
 
 
-def estacao_create(request):
-    # aqui ta correto 
+def estacao_create(request): 
     if request.method == "POST":
         form = EstacaoForm(request.POST)
         if form.is_valid():
@@ -76,22 +75,23 @@ def curso_detail(request, nome):
     curso = get_object_or_404(Curso, nome=nome)
     return render(request, 'api/curso_detail.html', {'curso': curso})
 
-@csrf_exempt
+
 def curso_create(request):
     if request.method == "POST":
         form = CursoForm(request.POST)
         if form.is_valid():
             curso = form.save()
             return redirect('estacoes:curso_list')
-        
     else:
         form = CursoForm()
 
     context = {
-        'form': form,
-        'estacoes': Estacao.objects.all()
+            'form': form,
+            'estacoes': Estacao.objects.all()
     }
+
     return render(request, 'api/curso_form.html', context)
+
 
 def curso_edit(request, pk):
     curso = get_object_or_404(Curso, pk=pk)

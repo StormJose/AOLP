@@ -18,32 +18,27 @@
    
     <div class="formulario">
         <div class="title">
-            <h2 class="heading-secundaria">Editar Curso</h2>
+            <h2 class="heading-secundaria">Criar Curso</h2>
         </div>
-    <form action="{% url 'estacoes:curso_list' %}" method="POST">
-        {% csrf_token %}
-        <!-- Campo oculto para simular o método PUT -->
-        <!-- <input type="hidden" name="_method" value="PUT"> -->
-
-        <label for="nome">Curso:</label>
-        <input type="text" value="{% if curso %} {{curso.nome}} {% else %} {% endif %}" id="nome" name="nome" required>
-    
-        <label for="descricao">Descrição:</label>
-        <input type="text" value="{% if curso %} {{curso.descricao}} {% else %} {% endif %}" id="descricao" name="descricao" required>
-       
-        <label for="estacao">Estação:</label>
-        <select id="estacao" name="estacao" required>
-            <option value="" disabled selected>Selecione uma estação</option>
-            {% for estacao in estacoes %}
-                <option value="dev">{{estacao.nome}}</option>
-            {% endfor %}
-        </select>
-       
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data">
-
-        <button type="submit" class="btn btn--main" >Enviar</button>
-          </form>
+        <form action="{% url 'estacoes:curso_create' %}" method="POST">
+            {% csrf_token %}
+            
+            <label for="nome">Curso:</label>
+            <input type="text" id="nome" name="nome" value="{% if form.instance %}{{ form.instance.nome }}{% endif %}" required>
+        
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" value="{% if form.instance %}{{ form.instance.descricao }}{% endif %}" required>
+           
+            <label for="estacao">Estação:</label>
+            <select id="estacao" name="estacao" required>
+                <option value="" disabled selected>Selecione uma estação</option>
+                {% for estacao in estacoes %}
+                    <option value="{{ estacao.id }}" {% if form.instance and form.instance.estacao.id == estacao.id %}selected{% endif %}>{{ estacao.nome }}</option>
+                {% endfor %}
+            </select>
+           
+            <button type="submit" class="btn btn--main">Confirmar</button>
+        </form>
     </div>
 
 </body>

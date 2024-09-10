@@ -30,7 +30,7 @@
 <body>
 <main>
     <div class="container">
-        <form action=" {% if estacao.pk %}{% url 'estacoes:estacao_edit' estacao.pk %} {% else %} {% endif %}" method="post">
+        <form action=" {% if estacao.pk %}{% url 'estacoes:estacao_edit' %} {% else %} {% url 'estacoes:estacao_create' %} {% endif %}" method="post">
             {% csrf_token %}
             <p>
                 <label for="id_titulo">nome:</label>
