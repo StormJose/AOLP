@@ -124,13 +124,14 @@
                 <ul>
                     {% for estacao in estacoes %}
                         <li>
-                            <span> {{estacao.nome}}</span> 
+                            <span>{{estacao.nome}}</span> 
                             <span class="form-botoes-de-acao"> 
                                 <a class="btn btn--editar" href="{% url 'estacoes:estacao_edit' estacao.pk %}">Editar</a>
                                 <a class="btn btn--excluir" href="{% url 'estacoes:estacao_delete' estacao.pk %}">Excluir</a>
                             </span>
                             
                         </li>
+
                     {% endfor %}
                 </ul>
                 <a class="btn btn--main" href="{% url 'estacoes:estacao_create' %}">

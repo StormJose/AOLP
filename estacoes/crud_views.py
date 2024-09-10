@@ -10,6 +10,17 @@ def est_curs(request):
 
 def estacao_list(request):
     estacoes = Estacao.objects.all()
+    estacao_cursos = {}
+
+    for estacao in estacoes:
+        estacao_cursos[estacao] = estacao.cursos.all()
+
+    context = {
+        'estacoes': estacoes,
+        'estacao_cursos': estacao_cursos
+
+    }
+
     return render(request, 'api/estacao_list.html', {'estacoes': estacoes})
 
 def estacao_detail(request, pk):
@@ -115,7 +126,7 @@ def curso_delete(request, pk):
     curso = get_object_or_404(Curso, pk=pk)
     if request.method == "POST":
         curso.delete()
-        return redirect(reverse('curso_list'))
+        return redirect('estacoes:curso_list')
     
     context = {
         'conteudo': curso,

@@ -20,7 +20,7 @@
         <div class="title">
             <h2 class="heading-secundaria">Criar Curso</h2>
         </div>
-        <form action="{% url 'estacoes:curso_create' %}" method="POST">
+        <form action="{% if curso.pk %} {% url 'estacoes:curso_edit' curso.pk %} {% else %} {% url 'estacoes:curso_create' %} {% endif %}"  method="POST">
             {% csrf_token %}
             
             <label for="nome">Curso:</label>

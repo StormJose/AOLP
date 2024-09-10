@@ -30,15 +30,15 @@
 <body>
 <main>
     <div class="container">
-        <form action=" {% if estacao.pk %}{% url 'estacoes:estacao_edit' %} {% else %} {% url 'estacoes:estacao_create' %} {% endif %}" method="post">
+        <form action=" {% if estacao.pk %}{% url 'estacoes:estacao_edit' estacao.pk %} {% else %} {% url 'estacoes:estacao_create' %} {% endif %}" method="post">
             {% csrf_token %}
             <p>
                 <label for="id_titulo">nome:</label>
-                <input type="text" value="{% if estacao %} {{estacao.nome}} {% else %} {% endif %}" name="nome" maxlength="100" required>
+                <input type="text" value="{% if form.instance %} {{form.instance.nome}} {% else %} {% endif %}" name="nome" maxlength="100" required>
             </p>
             <p>
                 <label for="id_video">descricao:</label>
-                <input type="text" value="{% if estacao %} {{estacao.descricao}} {% else %} {% endif %}" name="descricao" id="descricao" maxlength="200" required>
+                <input type="text" value="{% if form.instance %} {{form.instance.descricao}} {% else %} {% endif %}" name="descricao" id="descricao" maxlength="200" required>
             </p>
         
             <a class="btn btn--alt" href="{% url 'estacoes:estacao_list' %}">Voltar</a>
