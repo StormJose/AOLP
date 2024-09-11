@@ -17,7 +17,6 @@
 
     
     <style>
-  
         .container {
             display: grid;
             row-gap: 3.2rem;
@@ -50,7 +49,7 @@
         ul li {
             cursor: pointer;
             
-            border: 1.25px solid transparent;
+            border: 1.25px solid #dbdbdb;
             border-radius: 11px;
             font-size: 1.6rem;
             display: flex; 
@@ -59,11 +58,7 @@
             margin-bottom: 0.6rem;
             padding: 0 1.4rem;
         }
-        
-        ul li:hover {
-            border: 1.25px solid #dbdbdb;
-        }
-
+    
 
         .form-botoes-de-acao {
             opacity: 0;
@@ -80,7 +75,7 @@
         }
 
         .btn {
-            color: #f1f5f9;
+            /* color: #f1f5f9; */
             display: flex;
             align-items: center;
             flex-shrink:1;
@@ -110,6 +105,16 @@
             color: #e03131;
         }
 
+        .btn--link {
+            padding: 1.8rem 0 2.4rem 2.4rem;
+            border-bottom: 1.55px solid #dbdbdb;
+            border-radius: 0;
+        }
+
+        .btn--link:hover {
+            text-decoration: underline;
+        }
+
         .icon {
             width: 20px;
             height: 20px;
@@ -131,7 +136,10 @@
                 <h2 class="heading-secundaria">Cursos</h2>
             </div>
             <div class="container">
+
+                {% if estacoes %}
                 <ul>
+
                     {% for curso in cursos %}
                         <li>
                             <span> {{curso.nome}}</span> 
@@ -142,11 +150,19 @@
                                 <a class="btn btn--editar" href="{% url 'estacoes:curso_edit' curso.pk %}">Editar</a>
                                 <a class="btn btn--excluir" href="{% url 'estacoes:curso_delete' curso.pk %}">Excluir</a>
                             </span>
-                            
                         </li>
+                        <a class="btn btn--link" href="{% url 'estacoes:aula_create' curso.id %}">Adicionar aula  
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+
+
+                        </a>
                     {% endfor %}
                 </ul>
 
+               
+
+                
                 {% comment %} TO DO: IMPLEMENTAR VISUALIZAÇÃO DAS AULAS DE CADA CURSO COMO ATALHO PARA EDIÇÃO {% endcomment %}
                 <a class="btn btn--main" href="{% url 'estacoes:curso_create' %}">
                     Adicionar curso
@@ -154,6 +170,22 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
                 </a>
+
+
+                {% else %}
+
+                <div>
+                    <p class="subtitulo">Parece que não existem estações registradas na base de dados. Que tal adicionar uma?</p>
+                <a class="btn btn--main" href="{% url 'estacoes:estacao_create' %}">
+                    Adicionar estação
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                </a>
+            </div>
+
+                {% endif %}
+
             </div>
             {% comment %} Quando houver o perfil de usuário {% endcomment %}
             {% comment %} <a href="{% url 'perfil' %}">Voltar</a> {% endcomment %}

@@ -18,7 +18,6 @@ def estacao_list(request):
     context = {
         'estacoes': estacoes,
         'estacao_cursos': estacao_cursos
-
     }
 
     return render(request, 'api/estacao_list.html', {'estacoes': estacoes})
@@ -74,11 +73,16 @@ def estacao_delete(request, pk):
 # Instrutor & Admin Only
 def curso_list(request):
     cursos = Curso.objects.all()
-    return render(request, 'api/curso_list.html', {'cursos': cursos})
+    estacoes = Estacao.objects.all()
+    context = {
+        'cursos': cursos,
+        'estacoes': estacoes
+    }
+    return render(request, 'api/curso_list.html', context)
 
 def curso_detail_by_id(request, pk):
     curso = get_object_or_404(Curso, pk=pk)
-    
+
     return render(request, 'api/curso_detail.html', {'curso': curso})
 
 

@@ -22,8 +22,8 @@
         </p>
         <p>
             <label for="id_curso">Curso:</label>
-            <select name="curso" id="id_curso" required>
-                <option value selected>Escolha o curso</option>
+            <select name="curso" id="id_curso" value="{% if curso %} {{curso.pk}} {% endif %}" selected required>
+                <option  selected>Escolha o curso</option>
                 {% for curso in cursos %}
                     <option value="{{ curso.id }}">{{ curso.nome }}</option>
                 {% endfor %}
