@@ -15,7 +15,6 @@ staticfiles/
 # VS Code
 .vscode/
 
-
 # Coverage reports
 .coverage
 .coverage.*
