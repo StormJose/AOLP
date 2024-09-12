@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Nova Aula</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <title>Inserir Aula</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gestao-de-conteudo/styles.css' %}">
+
+    <script src="{% static 'js/gestao-de-conteudo/script.js' %}"></script>
 </head>
 <body>
-    <form action="{% url 'estacoes:aula_create' %}" method="post">
+
+    <section>
+        <div class="formulario">
+            <div class="title">
+            <h3>Inserir aula</h1>
+       </div>
+
+    <form action="{% if aula.pk %} {% url 'estacoes:aula_edit' %} {% else%} {% url 'estacoes:aula_create' %}  {% endif %} " method="post">
         {% csrf_token %}
-        <p>
-            <label for="id_titulo">Titulo:</label>
-            <input type="text" name="titulo" maxlength="100" required>
-        </p>
-        <p>
-            <label for="id_video">Video:</label>
-            <input type="url" value="https://www.youtube.com/embed/" name="video" id="id_video" maxlength="200" required>
-        </p>
-        <p>
-            <label for="id_descrição">Descrição:</label>
-            <textarea name="descrição" id="id_destrição" cols="40" rows="10" style="width: 227px; height: 148px;"></textarea>
-        </p>
-        <p>
-            <label for="id_curso">Curso:</label>
-            <select name="curso" id="id_curso" value="{% if curso %} {{curso.pk}} {% endif %}" selected required>
-                <option  selected>Escolha o curso</option>
-                {% for curso in cursos %}
-                    <option value="{{ curso.id }}">{{ curso.nome }}</option>
-                {% endfor %}
-            </select>
-        </p>
-        <button type="submit">Salvar</button>
+
+        <div>
+            <label for="titulo">Título:</label>
+            <input value="{% if form.instance %} {{form.instance.titulo }} {% endif %}" type="text" id="titulo" name="titulo" required>
+        </div>
+
+        <div>
+            <label for="descricao">Descrição:</label>
+            <textarea  id="descricao" name="descricao" rows="1" cols="40" required>
+                {% if form.instance %} {{form.instance.descricao }} {% endif %}
+            </textarea>
+        </div>
+
+        <div class="url">
+            <label for="video">URL:</label>
+            <div class="url-box">
+            <input value="{% if form.instance %} {{form.instance.url}} {% endif %}" type="url" id="youtubeLink" name="video" required>
+            <button onclick="extrairID()" class="event url-btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M760-120 480-400l-94 94q8 15 11 32t3 34q0 66-47 113T240-80q-66 0-113-47T80-240q0-66 47-113t113-47q17 0 34 3t32 11l94-94-94-94q-15 8-32 11t-34 3q-66 0-113-47T80-720q0-66 47-113t113-47q66 0 113 47t47 113q0 17-3 34t-11 32l494 494v40H760ZM600-520l-80-80 240-240h120v40L600-520ZM240-640q33 0 56.5-23.5T320-720q0-33-23.5-56.5T240-800q-33 0-56.5 23.5T160-720q0 33 23.5 56.5T240-640Zm240 180q8 0 14-6t6-14q0-8-6-14t-14-6q-8 0-14 6t-6 14q0 8 6 14t14 6ZM240-160q33 0 56.5-23.5T320-240q0-33-23.5-56.5T240-320q-33 0-56.5 23.5T160-240q0 33 23.5 56.5T240-160Z"/></svg></button>
+        </div>
+    </div>
+
+    <select  id="curso" name="curso" required>
+        <option  disabled selected > Selecione o curso</option>
+            {% for curso in cursos %}
+            <option value="{{curso.id}}">{{curso.nome}}</option>  
+            {% endfor %}
+    </select>
+
+        <button class="btn btn--main" type="submit" class="criar"> Confirmar</button>
+    
+    
     </form>
+</div>
+</section>
 </body>
 </html>

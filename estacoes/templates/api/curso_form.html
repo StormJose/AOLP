@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <link rel="stylesheet" href="{% static 'css/geral.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/globalQueries.css?v=1.0' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'css/gestao-de-conteudo/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}">
 
-
-    <title> {{curso.nome}} - Edição </title>
+    <title>AOLP - Inserir Curso</title>
 </head>
 <body>
-   
-    <div class="formulario">
+    <section>
+        <div class="formulario">
         <div class="title">
-            <h2 class="heading-secundaria">Criar Curso</h2>
-        </div>
-        <form action="{% if curso.pk %} {% url 'estacoes:curso_edit' curso.pk %} {% else %} {% url 'estacoes:curso_create' %} {% endif %}"  method="POST">
-            {% csrf_token %}
-            
-            <label for="nome">Curso:</label>
-            <input type="text" id="nome" name="nome" value="{% if form.instance %}{{ form.instance.nome }}{% endif %}" required>
         
+        <form action="{% if curso.pk %}{% url 'estacoes:curso_edit' curso.pk %} {% else %} {% url 'estacoes:curso_create' %} {% endif %}" method="post">
+            {% csrf_token %}
+
+            <h3>{% if curso.pk %} {{ curso.nome }} {% else %} Inserir curso {% endif %}</h3>
+
+
+            <label for="nome">Curso:</label>
+            <input value="{% if form.instance %} {{form.instance.nome}} {% else %} {% endif %}" type="text" id="nome" name="nome" required >
+    
             <label for="descricao">Descrição:</label>
-            <input type="text" id="descricao" name="descricao" value="{% if form.instance %}{{ form.instance.descricao }}{% endif %}" required>
-           
+            <textarea value="{% if form.instance %} {{form.instance.descricao}} {% else %} {% endif %}" id="descricao" name="descricao" rows="1" cols="50" required></textarea>
+       
             <label for="estacao">Estação:</label>
-            <select id="estacao" name="estacao" required>
-                <option value="" disabled selected>Selecione uma estação</option>
-                {% for estacao in estacoes %}
-                    <option value="{{ estacao.id }}" {% if form.instance and form.instance.estacao.id == estacao.id %}selected{% endif %}>{{ estacao.nome }}</option>
-                {% endfor %}
+            <select  id="estacao" name="estacao" required>
+                <option  disabled selected > Selecione a estação</option>
+                    {% for estacao in estacoes %}
+                    <option value="{{estacao.id}}">{{estacao.nome}}</option>  
+                    {% endfor %}
             </select>
-           
-            <button type="submit" class="btn btn--main">Confirmar</button>
+
+            
+
+        <button class="btn btn--main" type="submit">Confirmar</button>
         </form>
     </div>
-
+</section> 
 </body>
 </html>

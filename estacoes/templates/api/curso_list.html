@@ -128,10 +128,13 @@
    
     <main>
         <section>
-            <header>
-                <img src="{% static 'imgs/logo-simplified.png' %}" alt="Logo da Plataforma">
-                <p class="subtitulo">Gestão de conteúdo</p>
-            </header>
+            <div class="container">
+
+                <header>
+                    <img src="{% static 'imgs/logo-simplified.png' %}" alt="Logo da Plataforma">
+                    <p class="subtitulo">Gestão de conteúdo</p>
+                </header>
+            </div>
             <div class="container">
                 <h2 class="heading-secundaria">Cursos</h2>
             </div>
@@ -151,7 +154,7 @@
                                 <a class="btn btn--excluir" href="{% url 'estacoes:curso_delete' curso.pk %}">Excluir</a>
                             </span>
                         </li>
-                        <a class="btn btn--link" href="{% url 'estacoes:aula_create' curso.id %}">Adicionar aula  
+                        <a class="btn btn--link" href="{% url 'estacoes:aula_create' %}">Adicionar aula  
                             <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
 

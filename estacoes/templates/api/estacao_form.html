@@ -1,58 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
+<html lang="pt-br">
+<head>
     {% load static %}
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>{% if estacao.pk %} Editar {{estacao.nome}} {% else %} Inserir Estação {% endif %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/gestao-de-conteudo/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}">
     
-    <link rel="stylesheet" href="{% static 'css/geral.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/globalQueries.css?v=1.0' %}" />
-
-
-    <!-- Scripts -->
-    <script defer src="{% static 'js/reusable.js?v=1.0' %}"></script>
-
-    <title>{% block title %}Academy One {% endblock %}</title>
-
-    <style>
-    
-        form {
-            display: flex;
-            align-items: center;
-            gap: 1.4rem;
-        }
-        
-    </style>
-
-</head> 
-
+</head>
 <body>
-<main>
-    <div class="container">
-        <form action=" {% if estacao.pk %}{% url 'estacoes:estacao_edit' estacao.pk %} {% else %} {% url 'estacoes:estacao_create' %} {% endif %}" method="post">
+    <section>
+        <div class="formulario">
+        <div class="title">
+        <h3>Criar Estação</h1>
+        </div>
+        <form action="{% if estacao.pk %} {% url 'estacoes:estacao_edit' estacao.pk %} {% else %} {% url 'estacoes:estacao_create' %} {% endif %}" method="post">
             {% csrf_token %}
-            <p>
-                <label for="id_titulo">nome:</label>
-                <input type="text" value="{% if form.instance %} {{form.instance.nome}} {% else %} {% endif %}" name="nome" maxlength="100" required>
-            </p>
-            <p>
-                <label for="id_video">descricao:</label>
-                <input type="text" value="{% if form.instance %} {{form.instance.descricao}} {% else %} {% endif %}" name="descricao" id="descricao" maxlength="200" required>
-            </p>
+
+
+        <label for="titulo">Título (sigla da estação):</label>
+        <input type="text" id="titulo" name="titulo" required>
         
-            <a class="btn btn--alt" href="{% url 'estacoes:estacao_list' %}">Voltar</a>
-            <button class="btn btn--main" type="submit">Confirmar</button>
-        </form>
-    </div>
-</main>
-
-    <footer class="footer">
-         
-        </footer>
+        <label for="nome">Nome (nome da estação por extenso):</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="3" cols="50" required></textarea>
+        
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+        
+        <button class="btn btn--main" type="submit">Confirmar</button>
+    </form>
+</div>
+    </section>
 </body>
-
-
-{% block scripts %}
-
-{% endblock %}
+</html>

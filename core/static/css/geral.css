@@ -110,7 +110,6 @@ Valores de Tamanhos para imagens
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 
@@ -208,7 +207,6 @@ a.gradient-text:active {
 
 
 /* SCROLLBARS */
-
 ::-webkit-scrollbar {
     width: 12px; 
     height: 6px;

@@ -27,7 +27,7 @@ urlpatterns = [
     path('<str:estacao_nome>/cursos/', views.curso, name='curso'),
     # instrutor / admin
     path('cursos/admin', crud_views.curso_list, name='curso_list'),
-    path('cursos/new/<int:pk>', crud_views.curso_create, name='curso_create'),
+    path('cursos/new', crud_views.curso_create, name='curso_create'),
     path('cursos/<str:nome>/', crud_views.curso_detail, name='curso_detail'),
     path('cursos/<int:pk>/edit/', crud_views.curso_edit, name='curso_edit'),
     path('cursos/<int:pk>/delete/', crud_views.curso_delete, name='curso_delete'),

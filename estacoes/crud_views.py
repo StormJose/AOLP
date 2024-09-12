@@ -49,7 +49,7 @@ def estacao_edit(request, pk):
             return redirect('estacoes:estacao_list')
     else:
         form = EstacaoForm(instance=estacao)
-        context = {
+    context = {
             'estacao': estacao,
             'form': form,   
         }
@@ -95,16 +95,17 @@ def curso_create(request):
     if request.method == "POST":
         form = CursoForm(request.POST)
         if form.is_valid():
-            curso = form.save()
+            form.save()
             return redirect('estacoes:curso_list')
+        else:
+            print(form.errors)  
     else:
         form = CursoForm()
 
     context = {
-            'form': form,
-            'estacoes': Estacao.objects.all()
+        'form': form,
+        'estacoes': Estacao.objects.all()
     }
-
     return render(request, 'api/curso_form.html', context)
 
 
@@ -188,7 +189,7 @@ def aula_delete(request, pk):
     if request.method == "POST":
         aula.delete()
      
-        return redirect(reverse('estacoes:cursos'))
+        return redirect('estacoes:aulas_list')
     
     context = {
         'conteudo': aula,
