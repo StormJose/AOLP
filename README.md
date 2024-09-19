@@ -26,7 +26,7 @@ Nessa página é onde você define o propósito de utilização do Token e os es
 <br>
 
 ### 4. Importante
-Certifique-se de copiar a chave na tela seguinte após a geração de chave pois você não terá outra chance
+Certifique-se de copiar a chave na tela seguinte após a geração de chave pois você **não terá outra chance**
 
 
 ### 5. Clone o repositório
