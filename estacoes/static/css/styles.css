@@ -1,0 +1,135 @@
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner h1{
+    color: #1D267D;
+}
+.search{
+    border: 1px solid black;
+    width: 500px;
+    padding: 10px;
+    border-radius: 50px;
+}
+.search input{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.mesas{
+    margin-top: 10px;
+    border-radius: 50px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+.mesas i{
+    color: white;
+    margin-top: 19px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.mesas p{
+    margin-left: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mesa-amarelo{
+    background-color:#F98439;
+    border: 2px solid #ff7017;
+}
+.mesa-verde{
+    background-color: #64FF1CC0;
+    border: 2px solid #56fa0ac0;
+}
+.mesa-azul{
+    background-color: #4A7FFF;
+    border: 2px solid #1d61ff;
+}
+.mesa-roxo{
+    background-color: #4D49BF;
+    border: 2px solid #1f18e9;
+}
+.esconde-1, .esconde-2, .esconde-3, .esconde-4, .esconde-5, .esconde-6, .esconde-7, .esconde-8, .esconde-9, .esconde-10{
+    display: none;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 16px;
+    height: 200px;
+}
+.links a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+}
+.links a:hover{
+    color: blue;
+    transition: 0.5s;
+}
+#RH-box.active{
+    border-radius: 20px;
+}
+#ESG-box.active{
+    border-radius: 20px;
+}
+#BPO-box.active{
+    border-radius: 20px;
+}
+#PCA-box.active{
+    border-radius: 20px;
+}
+#QA-box.active{
+    border-radius: 20px;
+}
+#GET-box.active{
+    border-radius: 20px;
+}
+#MKT-box.active{
+    border-radius: 20px;
+}
+#WEB-box.active{
+    border-radius: 20px;
+}
+#SDR-box.active{
+    border-radius: 20px;
+}
+#DEV-box.active{
+    border-radius: 20px;
+}
+.esconde-1.active{
+    display: block;
+}
+.esconde-2.active{
+    display: block;
+}
+.esconde-3.active{
+    display: block;
+}
+.esconde-4.active{
+    display: block;
+}
+.esconde-5.active{
+    display: block;
+}
+.esconde-6.active{
+    display: block;
+}
+.esconde-7.active{
+    display: block;
+}
+.esconde-8.active{
+    display: block;
+}
+.esconde-9.active{
+    display: block;
+}
+.e0sconde-10.active{
+    display: block;
+}

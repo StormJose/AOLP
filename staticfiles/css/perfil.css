@@ -1,0 +1,1032 @@
+
+
+
+/* Variáveis */
+
+:root {
+    --badge-progress-opacity: 1
+}
+
+/*===============*/
+/* - NAVEGAÇÃO - */
+/*===============*/
+
+
+/*============*/
+/* - HEADER - */
+/*============*/
+
+.perfil-header {
+    /* z-index: 9999; */
+    /* background-color: #d7f2fc; */
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    align-items: center;
+    row-gap: 2.4rem;
+    column-gap: 3.2rem;
+}
+
+.perfil-header h2 {
+    margin: 1.8rem;
+}
+
+
+.perfil-header .perfil-img {
+    border-radius: 50%;
+    max-width: 6.4rem;
+    height: 6.4rem;
+}
+
+/* .heading-secundária.bem-vindo {
+    font-size: 2.4rem;
+    width: 75%;
+    color: inherit;
+    margin: 0;
+} */
+
+.perfil-info-box {
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#conta--progresso {
+    flex-grow: 1;
+    width: 100%;
+    appearance: none; 
+    border: none; 
+}
+
+#conta--progresso::-webkit-progress-bar {
+    background-color: #f0f0f0; 
+}
+
+#conta--progresso::-webkit-progress-value {
+    background-color: #35BEF0; 
+}
+
+
+
+/*===========*/
+/* subnavbar */
+/*===========*/
+
+.perfil-header > *:nth-child(3) {
+    grid-column: 1 / 3;
+}
+
+
+.subnavbar--list {
+    z-index: 9998;
+    overflow-x: scroll;
+    
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 3%; 
+    
+    padding: 4.2rem 0 1.2rem 0;
+    
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2.4rem;
+    font-size: 1.2rem;
+}
+
+.subnavbar--list::-webkit-scrollbar {
+    display: none;
+}
+
+.subnavbar--tab {
+    cursor: pointer;
+    flex-shrink: 0;
+    background-color: #f1f3f5;
+    font-size: inherit;
+    padding: 0.8rem;
+    border-radius: 11px;
+}
+
+.subnavbar--tab:link, 
+.subnavbar--tab:visited {
+    border-radius: 11px;
+    
+}
+
+.subnavbar--tab:hover, 
+.subnavbar--tab:active {
+    border-radius: 11px;
+    
+}
+
+
+.subnavbar--tab--active {
+    background-color: #35BEF0;
+    color: #fff;
+}
+
+/*===============*/
+/* - DASHBOARD - */
+/*===============*/
+
+
+.section--layout {
+    padding: 6.4rem 0;
+}
+
+
+.tab-contents--box {
+    /* position: relative; */
+}
+
+.tab-content {
+    padding: 1.8rem 0;
+    /* z-index: auto; */
+    /* position: absolute; */
+    
+    width: 100%;
+    transition: opacity 0.1s ease, height 0.1s ease;
+}
+
+.dashboard {
+    display: grid;
+    
+    row-gap: 2.4rem;
+}
+
+.dashboard--paineis {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto;
+    grid-template-rows: max-content;
+    row-gap: 2.4rem;
+}
+
+
+.painel--link {
+    padding: 1.2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+
+.painel--link:link, 
+.painel--link:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.painel--link:hover, 
+.painel--link:active {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.painel-tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.4rem 0.8rem;
+    background-color: #1d277d8c;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+.dashboard--painel {
+    position: relative;
+    height: 25rem;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.147), #1d257d7e), url('../course.jpg');
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    color: #f1f3f5;
+
+    transition: box-shadow 0.3s ease;
+ 
+}
+
+.dashboard--painel.conquista {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.147), #1d257d7e), url('../assets/achievement.jpg');
+ 
+    transition: box-shadow 0.3s ease;
+ 
+}
+
+.dashboard-painel:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favoritar-icon {
+    position: absolute;
+    top: 6%;
+    left: 88%;
+    transform: translate(45%, 0);
+    color: #f1f3f5;
+    stroke: #f1f3f5;
+    width: 24px;
+    height: 24px;
+    
+}
+
+.favoritar-icon:hover {
+
+
+
+}
+
+.favoritar--btn {
+
+}
+
+
+.painel-conteudo {
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 50%;
+    height: 100%;
+    
+}
+
+.painel-conteudo div {
+    margin-top: auto;
+}
+
+/* efeitos de transição dos botões dos paineis */
+
+.dashboard--painel:hover .painel-conteudo div {
+    opacity: 0;
+    
+    transition: opacity 0.3s ease;
+}
+
+.painel-conteudo .btns-box {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+    gap: 1.2rem;
+    
+    transition:  0.15s ease-in-out;
+    
+}
+
+.curso--tempo-restante {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 70%;
+    /* visibility: hidden; */
+    opacity: 0;
+    gap: 3.2rem;
+    padding: 0.8rem;
+
+    transition:  0.15s ease-in-out;
+}
+
+.dashboard--painel:hover .painel-conteudo .btns-box,
+.dashboard--painel:hover .painel-conteudo .curso--tempo-restante {
+    visibility: visible;
+    opacity: 1; 
+    
+    transform: translate(0, -150%);
+    transition:  0.15s ease-in-out;
+}
+
+
+
+/* estilos dos botões */
+
+.painel-conteudo .btns-box  a {
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 1.4rem;
+    color: #f1f3f5;
+    background-color: transparent;
+    border: 1.75px solid #f1f3f5;
+    font-weight: 600;
+    padding: 0.8rem;
+}
+
+.painel-conteudo .btns-box a:hover, 
+.painel-conteudo .btns-box a:active {
+    color: #222;
+    background-color: #f1f3f5;
+    padding: 0.8rem;
+}
+
+
+.curso-título, 
+.conquista-título {
+    font-size: 1.6rem;
+}
+
+.curso-instrutor,
+.conquista-descricao  {
+    font-size: 1.2rem;
+}
+
+.conquista-descricao {
+    flex-shrink: 1;
+}
+
+#dashboard--curso-progresso,
+#dashboard--conquista-progresso {
+    width: 100%;
+    height: 1.6rem;
+}
+
+.curso--progresso-texto,
+.conquista--progresso-texto {
+   font-size: 1.6rem;
+}
+
+
+
+progress::-webkit-progress-bar {
+    background-color: #7ad4f5;
+    border-radius: 7px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #35BEF0;
+    border-radius: 7px;
+    
+}
+
+progress::-moz-progress-bar {
+    
+}
+ 
+
+.item-curso-título {
+    font-size: 2rem;
+}
+
+/* filtros */
+#cursos {
+    font-weight: 600;
+    padding: 0.4rem 0.6rem;
+    border: 1.55px solid #222;
+    border-radius: 3px;
+
+    transition: 0.3s all;
+}
+
+#cursos:focus {
+    outline: 1.55px solid #1d277d71;
+}
+
+
+
+
+/* tab - cursos */
+
+.cursos {
+    display: grid;
+    row-gap: 2.4rem;
+}
+
+
+.curso--img {
+    
+}
+
+
+.painel-img-box, 
+.curso--img {
+    max-width: 144px;
+    height: auto;
+    text-align: end;
+    align-self: center;
+    border-radius: 11px;
+}
+
+.painel-img-box .conquista--img {
+    max-width: 30%;
+    text-align: center;
+}
+
+
+
+/* cursos */
+.lista--cursos {
+    padding: 3.4rem 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+    overflow-y: hidden;
+}
+
+/* Target the scrollbar */
+.lista--cursos::-webkit-scrollbar {
+    width: 10px;
+}
+  
+
+.lista--item-curso {
+    position: relative;
+}
+
+.lista--curso-opcoes {
+    list-style: none;
+    border-radius: 7px;
+    box-shadow: 1px -1.5px 20px 1px rgba(0, 0, 0, 0.137);
+    padding: 1.6rem 1.6rem 2.8rem 0.4rem;
+    background-color: #fff;
+    position: absolute;
+    top: 60%;
+    right: 0;
+}
+
+.lista--curso-opcoes li {
+    font-size: 1.4rem;
+}
+
+.item-curso {
+    display: flex;
+    justify-content: center;
+
+    gap: 2.4rem;
+}
+
+.item-curso-img {
+    border-radius: 11px;
+    width: 120px;
+    height: 100%;
+}
+
+.item-curso-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    gap: 0.2rem;
+}
+
+.progress--container {
+     width: 100%;
+}
+
+
+#course--progress-1, 
+#course--progress-2,
+#course--progress--3 {
+    appearance: none; 
+    -webkit-appearance: none; /* Safari e Chrome */
+    max-width: 100%;
+    height: 6px; 
+}
+
+#course--progress-1::-webkit-progress-value, 
+#course--progress-2:-webkit-progress-value,
+#course--progress--3::-webkit-progress-value {
+    background-color: #35BEF0; 
+}
+
+#course--progress--3::-webkit-progress-bar {
+    background-color: #ddd; 
+}
+
+/* .progress-container .course--progress-text {
+    display: block;
+    text-align: center;
+} */
+
+
+.curso-opcoes--btn {
+    /* FLEX */
+    justify-self: flex-end;   
+    cursor: pointer;
+}
+
+.curso--opcoes-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* conquistas */
+
+.conquistas.tab-content {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 1.8rem;
+    column-gap: 3.2rem;
+}
+
+.conquistas .caixa-de-opcoes {
+    display: flex;
+    gap: 1.2rem;
+    
+}
+
+/* GRID de visualização */
+
+/* .opcao-de-visualizacao {
+    color: inherit;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.opcao-de-visualizacao, 
+.opcao-colunas {
+    width: 24px;
+    height: 24px;   
+}
+ */
+
+.opcao-de-visualizacao--active {
+    color: #35BEF0;
+}
+
+.badges--box {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 3.2rem;
+}
+
+.destaque--badge {
+    color:  #f1f3f5;
+    background-image: url(''),linear-gradient(to right, #1D267D, #1d267d, #262f7ebd);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.8rem 1.2rem;
+    border-radius: 11px;
+}
+
+.badge-name {
+    font-size: 1.8rem;
+    color: inherit;
+   
+}
+
+.destaque--tag {
+    display: inline-block;
+    font-size: 1.4rem;
+    background-color: #f1f3f5;
+    color: #1D267D;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 11px;
+}
+
+.label--badge-box .icon--missao-diaria {
+    width: 20px;
+    height: 20px;
+}
+
+.icon--missao-diaria {
+    width: 45px;
+    height: 45px;
+}
+
+.destaque--titulo {
+    color: #f1f3f5;
+}
+
+.label--badge-box {
+    width: 100%;
+    background-color: #f1f3f5;
+    border-radius: 7px;
+    color: #1D267D;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+}
+
+
+.badge-wrap {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 1.8rem;
+}
+  
+
+.badge-bar {
+      position: relative;
+      flex-grow: 1;
+      height: 20px;
+      margin-right: 25px;
+      background-color: #1d277d71;
+      border-radius: 8px;
+}
+
+/* barra de progresso */
+.badge-bar#conquista-destaque {
+    height: 20px;
+
+    margin-right: 0;
+}
+
+/* label de xp */
+.badge-bar#conquista-destaque .badge-per:before {
+   display: block;
+
+   top: 10%;
+   right: 50%;
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: #f1f3f5;
+}
+
+    
+.badge-proxima {
+    margin-top: auto;
+    max-height: 8px;
+}
+  
+.xp-goal {
+    position: absolute;
+  
+    top: -25px;
+    left: 95%;
+    font-size: 1.2rem;
+}
+  
+.badge-per {
+    /* width necessária para criar a animação de progressão */
+    width: 0;
+    height: 100%;
+    background: #1D267D;
+    border-radius: 8px;
+    transition: 1s linear;
+    position: relative;
+}
+
+
+.badge-per:before {
+
+    display: none;
+
+    opacity: var(--badge-progress-opacity);
+    content: attr(xp);
+    position: absolute;
+    /* padding: 0.4rem 0.6rem 0.8rem 0.6rem; */
+    /* background-color: #1D267D; */
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    top: -50%;
+    right: 0;
+    transform: translateX(50%);
+    color: #1D267D;
+
+}
+
+
+.item--missoes-diarias:hover .badge-per:before {
+    display:  block;
+
+    top: -200%;
+    right: 0;
+    
+}
+
+.badge-per:after {
+    content: "";
+    position: absolute;
+    /* width: 10px;
+    height: 10px; */
+    background-color: #1D267D;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 1px;
+  }
+
+
+
+/* 
+.label--badge-box progress::-webkit-progress-value {
+    background-color: #1D267D; 
+}
+
+.label--badge-box progress::-webkit-progress-bar {
+    background-color: #1d277dae; 
+}
+ */
+
+
+.label--xp-badge {
+
+}
+
+.label--xp--badge-alvo {
+
+}
+
+.destaque--titulo {
+    
+}
+
+
+
+.lista--missoes-diarias {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.item--missoes-diarias {
+    padding-bottom: 1.2rem;
+    display: flex;
+    gap: 2.4rem;
+    border-bottom: 2px solid #f5f4f4;
+
+}
+
+.missao-diaria-conteudo {
+    max-width: 100%;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+}
+
+.missao-diaria-titulo {
+    font-size: 1.6rem;
+}
+
+
+.lista--conquistas {
+    display: grid;
+    grid-auto-flow: row;
+    column-gap: 2.4rem;
+    row-gap: 4.4rem;
+    /* justify-items: center; */
+    list-style: none;
+    padding: 2.4rem 0;
+}
+
+.modal-lista--conquistas {
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    list-style: none;
+    column-gap: 2.4rem;
+    row-gap: 4.4rem;
+    padding: 3.6rem 0;
+}
+
+.item-conquista {
+    padding-bottom: 1.2rem;
+    display: flex;
+    gap: 2.4rem;
+    border-bottom: 2px solid #f5f4f4;
+}
+
+.item-conquista img {
+    width: 32px;
+    height: 32px;
+}
+
+.item-conquista-descricao {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+ 
+    gap: 1rem;
+}
+
+.item-conquista-descricao div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.item-conquista-título {
+    font-size: 1.4rem;
+}
+
+.label--data-da-conquista {
+    margin-top: auto;
+    color: #9ca3af;
+}
+
+.item-conquista--btn {
+    cursor: pointer;
+
+    font-family: 'Poppins';
+    border: none;
+    
+    /* flex do elemento pai */
+    align-self: flex-end;
+    text-align: left;
+    background-color: #35BEF0;
+    color:#f1f3f5;
+    padding: 1rem 1.4rem;
+    border-radius: 11px;
+    
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.item-conquista--btn:hover {
+    background-color: #7ad4f5;
+    color: #e6e6e6;
+}
+
+
+
+
+/*=========*/
+/* - CTA - */
+/*=========*/
+
+.cta-conteudo {
+    display: grid;
+    row-gap: 2.4rem;
+}
+
+.cta-conteudo div {
+    
+}
+
+.cta-conteudo div img {
+    border-radius: 11px;
+    width: 100%;
+    height: auto;
+}
+
+.cta-conteudo div .btn {
+    align-self:  flex-start;
+}
+
+.cta-texto {
+    font-size: 1.6rem;
+}
+
+
+
+/* - CAROUSEL - */
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+
+
+/*========================*/
+/* - PERFIL - INSTRUTOR - */
+/*========================*/
+
+
+
+
+/*===================*/
+/* - CONFIGURAÇÕES - */
+/*===================*/
+
+.section-configuracoes {
+    padding: 6.4rem 0;
+}
+
+.section-configuracoes .perfil-header {
+   grid-template-columns: auto;
+   padding: 2.8rem 1.8rem;
+}
+
+.section-configuracoes .perfil-header > div  {
+    background-image: url(''),linear-gradient(to right, #1D267D, #242d7a, #1d277da1);
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    color: #f1f3f5;
+    padding: 2.8rem;
+    border-radius: 11px;
+}
+
+.perfil-img-edicao {
+    border-radius: 50%;
+    max-width: 6.4rem;
+    height: 6.4rem;
+}
+
+.box-edicao {
+    display: grid;
+    row-gap: 3.2rem;
+    /* padding: 6.4rem 0; */
+}
+
+.box-informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.informacoes-campo {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.informacoes-texto {
+    font-size: 1.6rem;
+}
+
+.form-perfil-edicao {
+    /* display: flex;
+    gap: 3.2rem; */
+}
+
+.informacoes-campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.informacoes-label {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.informacoes-atuais-username {
+    font-size: 1.4rem;
+}
+
+/* FORM - Alterar informações pessoais. */
+
+.form-perfil-edicao {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.form-perfil-edicao .field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.form-perfil-edicao .field input {
+    font-weight: 600;
+    border: none;
+    outline: 1.55px solid #222;
+    border-radius: 7px;
+    margin: 1.2rem 0 2.4rem 0;
+    padding: 0.8rem 1.2rem;
+}
+
+.form-perfil-edicao .field input:focus {
+    outline: 2.55px solid #35BEF0;
+}
+
+.box--form-email-recuperacao {
+    padding: 2.4rem 0;
+}
+
+.form-email-recuperacao { 
+    max-width: 35rem;
+    display: flex;
+    justify-content: space-between;
+    outline: 1.55px solid #222;
+    border-radius: 7px;
+    
+}
+
+.form-email-recuperacao input {
+    width: 100%;
+    font-weight: 600;
+    border: none;
+    border-radius: 7px;
+    padding: 0.8rem 1.2rem;
+}
+
+.btn-salvar-recuperacao {
+    font-family: inherit;
+    pointer-events: none;
+    opacity: 0.5;
+    font-weight: 600;
+    border: none;
+    border-radius: 7px;
+    padding: 1rem 1.2rem;
+}
+
+
+.email-recuperacao-mensagem {
+    display: inline-block;
+    margin: 1.2rem 0;
+    /* color:  */
+}

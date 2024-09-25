@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Scripts -->
+    <script defer src="{% static 'js/index.js' %}"></script>
+    
+    
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'image/favicon-32x32.png' %}" type="image/x-icon">
+        <title>Academy-Login</title>
+</head>
+<body>
+    <section >
+        <div class="container">
+            <form name="formulario" class="form-cadastro" id="form">
+                <img class="logo--alt-2" src="{% static 'image/LOGO-ACADEMY.png' %}" alt="" width="200px" height="150px">
+                <label class="text-login" for="fname">Faça seu cadastro!</label>
+                <div class="container-inputs">
+                    <div class="field">
+                        <label for="nome">Nome completo: </label>
+                        <input class="inputs nome" type="text" value="" name="nome" id="nome" maxlength="26">
+                        <span class="mensagem--erro" data-label="nome"></span>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="email">Email: </label>
+                        <input class="inputs email" type="email" value="" name="email" id="email">
+                        <span class="mensagem--erro" data-label="email"></span>
+                    </div>
+                    <div class="field">
+                        <label for="senha">Senha:</label>
+                        <input class="inputs password senha" maxlength="16" type="password" value="" name="senha" id="senha">   
+                        <span class="mensagem--erro" data-label="senha"></span>
+                    </div>     
+                    
+                    <div class="field">
+                        <label for="confirmar-senha">Confirmar senha: </label>
+                        <input class="inputs confirmar-senha" type="password" value="" name="confirmar-senha" id="confirmar-senha">
+                        <span class="mensagem--erro" data-label="confirmar-senha"></span>
+                        
+                    </div>
+                </div>     
+                <div class="container radio-fields-box">
+                    <div class="radio-field">
+                        <label for="fname">Estudante</label>
+                        <input id="estudante" type="radio" name="perfil"  class="estudante btn-radio-1">
+                        <span class="mensagem--erro" data-label="radio-opcoes"></span>
+                    </div>
+                    <div class="radio-field">
+                        <label for="fname">Instrutor</label>
+                        <input id="instrutor" type="radio" name="perfil"  class="instrutor btn-radio-2">
+                        <span class="mensagem--erro" data-label="radio-opcoes"></span>
+                    </div>
+                </div>
+                <button id="botao-cadastro" class="btn botao" type="submit" value="Criar conta" >
+                    Cadastrar
+                    <div class="spinner"></div>
+                </button>
+            </form>
+            <footer class="footer">
+                <img src="{% static 'image/LOGO-ACADEMY-LONGO.png' %}" alt="" width="200px" height="30px">
+            </footer>
+        </div>
+        </section>
+        
+</body>
+</html>

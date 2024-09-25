@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Nova Aula</title>
+</head>
+<body>
+    <form action="{% url 'aula_create' %}" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="id_titulo">Titulo:</label>
+            <input type="text" name="titulo" maxlength="100" required>
+        </p>
+        <p>
+            <label for="id_video">Video:</label>
+            <input type="url" value="https://www.youtube.com/embed/" name="video" id="id_video" maxlength="200" required>
+        </p>
+        <p>
+            <label for="id_descrição">Descrição:</label>
+            <textarea name="descrição" id="id_destrição" cols="40" rows="10" style="width: 227px; height: 148px;"></textarea>
+        </p>
+        <p>
+            <label for="id_curso">Curso:</label>
+            <select name="curso" id="id_curso" required>
+                <option value selected>Escolha o curso</option>
+                {% for curso in cursos %}
+                    <option value="{{ curso.id }}">{{ curso.nome }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

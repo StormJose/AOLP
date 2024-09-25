@@ -1,0 +1,47 @@
+
+{% block content %}
+{% for estacao in estacoes %}
+        <div class="estacao container">
+            <div class="lista">
+                <h3 class="heading-secundaria">{{ estacao.nome }}</h3>
+                {% if estacao.nome == "DEV"  %}
+                <span class="destaque-label">Destaque</span>
+                {% else %}
+                {% endif %}
+                <div id="{{ curso.id }}">
+                    <div class="carousel">
+                    <ul class="cursos-lista">
+                        {% for curso in estacao.cursos.all %}
+                        <li> 
+                            <a href="{% url 'aulas' curso.id %}"> 
+                                <div class="card">
+                            
+                                    <h3 class="card-titulo">{{ curso.nome }}</h3>
+                                    <p>{{ curso.descricao }}</p>
+                                           
+                                </div>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="scroll-controls">
+                        <button  class="scroll-btn scroll-left-btn" aria-label="scroll-btn--left" id="scroll-left-button">
+                        <svg class="scroll-icon--right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                        </svg>
+                        
+                        </button>
+                        <button class="scroll-btn scroll-right-btn" aria-label="scroll-btn--right" id="scroll-right-button">
+                        <svg class="scroll-icon--left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                        </svg>    
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="fa-solid fa-arrow-down " id="{{ estacao.nome }}"></a>
+    </div>
+{% endfor %}
+{% endblock %}

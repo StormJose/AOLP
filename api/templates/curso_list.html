@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Cursos</title>
+</head>
+<body>
+    <h1>Lista de Cursos</h1>
+    <ul>
+        {% for curso in cursos %}
+            <li>
+                <a href="{% url 'curso_detail' curso.pk %}">{{ curso.nome }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'curso_create' %}">Adicionar Novo Curso</a>
+</body>
+</html>

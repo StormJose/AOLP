@@ -1,0 +1,177 @@
+.section--cursos {
+    padding: 5.6rem 0 9.6rem 0;
+}
+
+/* adicionar um background diferente */
+.heading-container-wrapper {
+    background: linear-gradient(45deg, rgb(29, 38, 125), rgb(53, 190, 240));
+    color: #f1f5f9;
+    padding: 3.8rem 0;
+}
+
+
+.cursos-box {
+    position: relative;
+}
+
+.courses {
+    padding: 4.8rem 0;
+}
+
+
+.estacoes-lista-wrapper {
+    position: sticky; 
+    top: 55px; 
+    background-color: white; 
+    z-index: 1000; 
+    list-style: none;
+    width: 100%;
+    padding: 1.8rem;
+    margin: 0;
+    border-bottom: 1px solid #f1f5f9;
+    margin: 0 auto;
+}
+
+.estacoes-lista {
+    overflow-x: scroll;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 2.4rem;
+
+    scrollbar-width: none;
+
+}
+
+.destaque-label {
+    display: inline-block;
+    background-color: #4ad4cd0f;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color:#38aca6;
+    padding: 0.8rem 1.8rem;
+    border-radius: 15px;
+    margin-top: 1.2rem;
+}
+
+
+.estacao-link {
+    cursor: pointer;
+
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: #969696 ;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    border-radius: 11px;
+    padding: 0.8rem 1.2rem;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: 0.15s all;
+}
+
+.estacao-link-active {
+    background-color: #2da0ca;
+    color: #F1F5F9;
+    
+}
+
+.estacao-link:hover {
+    background-color: #2da0ca;
+    color: #F1F5F9;
+    
+}
+
+
+
+.cursos-lista {
+    z-index: 1000;
+    padding-top: 2rem;
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content;
+    justify-items: start;
+    column-gap: 2.4rem;
+    overflow-x: scroll;
+
+    scrollbar-width: none;
+   
+}
+
+.cursos-lista::-webkit-scrollbar {
+    scrollbar-width: none;
+}
+
+.cursos-lista li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    border: 1.55px solid #dbdbdb;
+    border-radius: 11px;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 3.2rem 2.4rem;
+    height: 100%;
+}
+
+.card-titulo {
+    font-size: 1.6rem;
+}
+
+
+/*======================*/
+/* SEÇÃO CALL TO ACTION */
+/*======================*/
+
+.section--cta {
+    padding: 9.6rem 1.8rem;
+}
+
+.cta {
+    border-radius: 11px;
+    padding: 2.4rem 3.2rem;
+    display: grid;
+   
+    background: linear-gradient(180deg, #1D267D
+,#4AD4CD);
+}
+
+.cta .heading-container {
+    max-width: 75%;
+    justify-content: center;
+    /* GRID */
+    justify-self: center;
+    
+    text-align: center;
+    color: #f1f5f9;
+}
+
+.cta-img {
+   max-width: 25rem;
+
+   /* GRID */
+   justify-self: center;
+}
+
+.btn--cta {
+    color: #f1f5f9;
+    background-color: #1D267D;
+
+    
+}
+
+.btn--cta:hover, 
+.btn--cta:active {
+    
+    background-color: #171f64;
+}

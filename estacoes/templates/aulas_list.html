@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/aulas.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estacoesQueries.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aulasQueries.css' %}">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+    
+<title>{% block title %}Academy One - Cursos{% endblock %}</title>
+
+{% block content %}
+    <section class="aulas--section">      
+        <div class="aulas-container"> 
+            <div class="aula--wrapper">   
+                <!-- AULA (Inserido dinamicamente em js/aulas.js) -->
+                {% comment %} {% include 'partials/aula.html' %} {% endcomment %}
+
+                <header class="aula--header"> 
+                    <a href="{% url 'cursos' %}" class="voltar-link">
+                        <svg class="voltar-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                        </svg>  
+                    </a>
+                    <progress id="curso--progress" value="50" max="100"></progress>
+                    <p class="progress--label"></p>
+                </header>    
+                <div class="aula"> 
+
+                </div> 
+            </div>
+            <div class="aulas-sidebar">
+                <div class="aulas-sidebar-nav">
+                    <ul class="aulas-sidebar--list">
+                        <li data-state="closed">
+                            <button aria-label="Lista de reprodução" class="sidebar-btn sidebar-btn--active" data-tab="1">
+                               <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811Z" />
+                                </svg>
+
+                            </button>
+                        </li>
+                        <li data-state="closed">
+                            <button aria-label="Comentários" class="sidebar-btn" data-tab="2">
+                                <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="aulas-playlist tab-content open--playlist hidden" id="tab-content-1">
+                    {% comment %} <div class="heading-container">
+                        <h3 class="heading-terciaria">Aulas</h3>  
+                    </div> {% endcomment %}
+
+                    {% comment %} AULA EM REPRODUÇÃO {% endcomment %}
+                    <div class="tab-content current-active-aula">
+                        <div class="current-aula-card-link" href="#" data-id="">
+                                <div class="current-aula-card-conteudo">
+                                    <div class="current-aula">
+                                        <span>Em reprodução</span>
+                                        <h3 class="current-aula-card-titulo">
+                                            
+                                        </h3>    
+                                    </div>
+                                    <span class="close--playlist-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                    <span class="open--playlist-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                    </div>
+                    {% comment %} PLAYLIST {% endcomment %}
+                    <ul class="aulas-list" aria-label="{{ curso.aulas.all|length }}">
+                        {% for aula in curso.aulas.all %}
+                        <li>
+                            <a class="aula-card-link" href="{% url 'aula' aula.id %}" data-id={{aula.id}}>
+                                <div class="aula-card-conteudo">
+                                    <div>
+                                        <h3 class="aula-card-titulo">{{ aula.titulo }}</h3>
+                                        <div class="progress-bar">
+                                            <div class="progress"></div>
+                                        </div>      
+                                    </div>
+                                    <span class="play-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                        </svg>
+                                    </span>  
+                                    <span class="pause-icon">                                 
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+            
+                <!-- <a href="{% url 'estacoes' %}" class="card-link">Ver cursos</a> -->
+
+                        {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="tab-content comments-tab " id="tab-content-2">
+                        <div class="doubt-box">
+                            <header class="doubt-header">
+                                <img src="{% static 'imgs/instrutor.jpg' %}" alt="foto de perfil do usuário"/>
+                                <h4 class="author-name">Felipe Augusto 
+                                </h4>
+                                <span class="instructor-label">Instrutor</span>
+
+                            </header>
+                            <div class="doubt-content">
+                                <p class="doubt-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, cum, nam assumenda ducimus non ex, error commodi placeat nisi esse vel culpa exercitationem similique consectetur enim? Nisi nam maiores magni?</p>
+                                <time class="doubt-date" datetime="2024-08-29">
+                                    29 de Agosto, 2024
+                                </time>
+                            </div>
+                            <ul class="doubt-answers--list">
+                                <li>
+                                    <div class="doubt-answer-box">
+                                        <header class="doubt-answer-header">
+                                            <img src="{% static 'imgs/answer-author.jpg' %}" alt="" />
+                                            <h5 class="answer-author-name">Vladimir Ilitch</h5>
+                                        </header>
+                                        <div class="doubt-answer-content">
+                                            <p class="doubt-answer-text">lorem ipsum dolor amet</p>
+                                            <time class="doubt-date" datetime="2024-08-29">
+                                                29 de Agosto, 2024
+                                            </time>
+                                        </div>
+                                       {% comment %}  <ul class="co-answers--list">
+                                            <li>
+        
+                                            </li>
+                                        </ul>
+                                    {% endcomment %}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="create-doubt-box">
+                                        <input class="input--create-doubt" type="text" placeholder="Deixe sua dúvida..." />
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="send-icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                                        </svg>  
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    
+    <div class="curso-modal">
+                
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/aulas.js' %}"></script>
+
+{% endblock %}
