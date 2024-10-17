@@ -5,7 +5,7 @@
 
 Principal: Poppins
 
-Títulos: Gruppo
+Alternativa: Gruppo
 
 
 -> Tamanhos de Fontes
@@ -15,7 +15,7 @@ Títulos: Gruppo
 principal: 4rem
 secundário: 2.6rem
 terciário: 2rem;
-
+quaternário: --
 
 (mobile)
 -Texto padrão : 1.6rem;
@@ -43,10 +43,8 @@ botões: 600
 
 -quaternária: #4AD4CD;
 
--vermelho (erros e outros elementos): #dc2626
-
-
-
+- Erros e outros avisos (vermelho):
+#f03e3e
 
 tints (tons mais claros)
 #e9f6fb
@@ -59,21 +57,26 @@ shades (tons mais escuros)
 #f1f3f5;
 
 -cinzas
+#f1f5f9
 #9ca3af;
 #ced4da;
+#e9ecf0;
+#868e96;
 
 03 - ÍCONES
 
 -Tamanhos
 
-36px
-24px
-
+Pequeno: 20px;
+Médio: --
+Grande: --
 
 
 04 - BORDER-RADIUS
 
-
+7px
+11px
+21px
 
 
 05 - ESPAÇAMENTO
@@ -81,22 +84,12 @@ shades (tons mais escuros)
 // VALOR PADRÃO DE ESPAÇAMENTO ENTRE SEÇÕES (MOBILE)
 - padding: 4.8rem 0;
 
-padrão = 11px
-
-
-
 
 Valores de Tamanhos para imagens
 
 -LOGO: 16rem
 
 -LOGO SIMPLIFICADO: 3.6rem
-
-
-
--Valores utilizados
-
-11px 
 
 
 */
@@ -228,17 +221,13 @@ a.gradient-text:active {
 }
 
 
-
-
 /*============*/
-
 
 .btn {
     cursor: pointer; 
 
     display: inline-block;
 
-   
     border-radius: 11px;
     padding: 1rem 1.2rem;
     text-decoration: none;
@@ -291,6 +280,18 @@ a.gradient-text:active {
     color: #f1f3f5;
 }
 
+.btn--danger {
+    background-color: #ea580c;
+    color: #f1f3f5;
+
+    transition: 0.3s all;
+}
+
+.btn--danger:hover,
+.btn--danger:active {
+    background-color: #c2410c;
+}
+
 .btn--link {
     text-align: left;
     padding: 1rem 0 ;
@@ -323,14 +324,19 @@ a.gradient-text:active {
     transition: 0.3s all;
 }
 
+.btn--icon:hover, 
+.btn--icon:active {
+    color: #1f267d;
+}
+
 .small-icon {
     width: 20px;
     height: 20px;
 }
 
-.btn--icon:hover, 
-.btn--icon:active {
-    color: #1f267d;
+.medium-icon {
+    width: 32px;
+    height: 32px;
 }
 
 .footer {
@@ -439,8 +445,6 @@ a.gradient-text:active {
     transition: 0.5s all;
 }
 
-
-
 .dropdown.instrutor {
     background-color: #1D267D;
 }
@@ -449,6 +453,16 @@ a.gradient-text:active {
 .dropdown .logo-container {
     /* grid */
     align-self: center;
+}
+
+.header.instrutor .logo {
+    filter: brightness(0.2);
+    filter: saturate(3); 
+    filter: grayscale(100%); 
+    filter: contrast(100%); 
+    filter: brightness(0.25); 
+    filter: blur(3px);
+    filter: invert(100%);  
 }
 
 .logo-container {
@@ -476,15 +490,14 @@ a.gradient-text:active {
 }
 
 
-.btns-box {
-    
+.dropdown .btns-box {
+
+    justify-self: end; 
+
     display: flex;
-    flex-direction: row;
+    align-items: center;
     gap: 1.2rem;
-    
-    /* GRID */
-    justify-self: end;
-}
+} 
 
 .nav-items--list .btns-box {
     
@@ -559,6 +572,10 @@ a.gradient-text:active {
     gap: 2.4rem;
 }
 
+#user-dropdown .nav-items--list {
+    font-size: 1.4em;
+}
+
 .nav-items--list li:last-child {
     width: 100%;
     align-self: flex-end;
@@ -589,20 +606,22 @@ a.gradient-text:active {
 }
 
 .nav-link {
-    border-radius: 7px;
-
     cursor: pointer;
+
+    text-decoration: none;
+    color: inherit;
     display: flex;
     align-items: center;
-    
-    color: inherit;
-    text-decoration: none;
+    gap: 1.8rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 7px;
+    font-weight: 600;
 }
 
-.nav-link .nav-icon{
+/* .nav-link .nav-icon {
     width: 24px;
     height: 24px;
-}
+} */
 
 
 .instrutor .nav-link:hover, 
@@ -626,15 +645,11 @@ a.gradient-text:active {
 }
 
 
-
-
-
-.nav-submenu-list {
+.nav-submenu--list {
         display: none;
 }
 
 .nav-submenu-list--active {
-    
     padding: 1.2rem 0;
     margin-left: 1.2rem;
     font-size: 1.6rem;
@@ -645,20 +660,12 @@ a.gradient-text:active {
 }
 
 
-
-
-.nav-submenu--list {
-    display: none;
-}
-
-.submenu-link {
-    
+.submenu-link {  
     display: flex;
     align-items: center;
     text-decoration: none;
     color: inherit;
     gap: 0.8rem;
-
 }
 
 .submenu-link svg {
@@ -666,50 +673,75 @@ a.gradient-text:active {
     height: 18px;
 }
 
+/*==============*/
+/* - DROPDOWN - */
+/*==============*/
 
-/* User Dropdown - Site */
-
-/* .dropdown-icon {
-    font-size: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    margin-left: auto;
-  } */
-
-
-  /* imagem de perfil */
-
-/* .dropdown .nav-perfil-img {
-    display: none;
+.dropdown-windows {
+    position: absolute;
+    right: 0;
+    top: 35px;
     visibility: hidden;
     pointer-events: none;
-} */
-
-
-.nav-perfil-img img {
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    opacity: 0;
+    
+    transition: 0.30s all;
 }
 
-
-.nav-perfil-img:hover #user-dropdown {
-    display:block;
-    max-width: 60%;
-    position: absolute;
+.dropdown-windows.active {
     z-index: 9999;
-    top: 80%;
-    left: auto;
-    right: 75px;
+    
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 100;
+    transform: translate(0, 3.15px);
     
     background-color: #fff;
     border-radius: 7px;
     box-shadow: 1px 1.5px 20px 1px rgba(0, 0, 0, 0.137);
     border-top-right-radius: 0;
-
+    
 }
+
+.dropdown-header {
+    padding: 1.6rem;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.arrow--icon {
+    width: 12px;
+    height: 12px;
+}
+
+.arrow--hidden {
+    display: none;
+}
+
+/* User Dropdown - Site */
+
+.nav-perfil-img {
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #dbdbdb;
+    padding-left: 1.2rem;
+    gap: 0.8rem;
+}
+
+.nav-perfil-img img {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#dropdown-1.instrutor {
+    max-width: 60%;
+    position: absolute;
+    background-color: #1D267D;
+}
+
 
 #user-dropdown {
     display: none;
@@ -739,10 +771,6 @@ a.gradient-text:active {
    filter: invert(100%);
 }
 
-.arrow--hidden {
-    display: none;
-}
-
 .menu-content {
     width: 100%;
     display: flex;
@@ -752,11 +780,19 @@ a.gradient-text:active {
     margin-right: 4.4rem;
 }
 
+.user-items--list {
+    list-style: none;
+    
+}
+
+.user-items--list li {
+    padding-bottom: 1.6rem;
+    font-size: 1.4rem;
+}
 
 .search-menu {
     margin-top: 10px;
 }
-
 
 .box {
     display: none;
@@ -779,6 +815,116 @@ a.gradient-text:active {
    opacity: 0;
 } 
 
+
+/* NOTIFICAÇÕES - DROPDOWN */
+
+.notification-btn {
+    position: relative;
+
+    padding: 0.6rem 0.6rem 0 0.6rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.notification-icon--open {
+    display: none;
+}
+
+.notification-icon--close {
+    margin-top: 0.4rem;
+}
+
+span[aria-expanded="true"] .notification-icon--close {
+    display: none;
+
+}
+
+span[aria-expanded="true"] .notification-icon--open {
+    display: block;
+}
+
+
+
+.notification-dropdown  {
+    position: absolute;
+   
+    border-radius: 11px;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    top: 50px;
+    right: 100px;
+    
+    transition: 0.30s all;
+}
+
+.notification-list {
+    list-style: none;
+
+}
+
+.notification {
+    cursor: pointer;
+
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    
+}
+
+.notification:hover,
+.notification:active {
+
+  background-color: #f1f5f9;
+    
+
+}
+
+.notification img {
+    width: 14px;
+    height: 14px;
+}
+
+.notification h4 {
+    font-size: 1.4rem;
+}
+
+.notification p {
+    font-size: 1.2rem;
+}
+
+
+.empty-notifications-box {
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.empty-notification-icon {
+    width: 48px;
+    height: 48px;
+    color: #969696;
+}
+
+.empty-notification-text {
+    font-size: 1.2rem;
+}
+
+
+.marked-seen-btn {
+    color: #333;
+}
+
+.marked-seen-btn:hover,
+.marked-seen-btn:active {
+    color: #969696;
+}
 
 
 
@@ -959,4 +1105,24 @@ a.gradient-text:active {
   width: 20px;
   height: 20px;
   color: #1D267D;
+}
+
+
+
+/* MODAL WINDOWS (POPUPS) */
+
+.modal-window {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.15s all;
+}
+
+.modal-window--active {
+    z-index: 999;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
