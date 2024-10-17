@@ -323,6 +323,11 @@ a.gradient-text:active {
     transition: 0.3s all;
 }
 
+.small-icon {
+    width: 20px;
+    height: 20px;
+}
+
 .btn--icon:hover, 
 .btn--icon:active {
     color: #1f267d;

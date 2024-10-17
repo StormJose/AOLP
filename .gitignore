@@ -11,6 +11,7 @@ __pycache__/
 
 media/
 staticfiles/
+usuarios/static/css/reliquia/
 
 # VS Code
 .vscode/
@@ -23,6 +24,7 @@ staticfiles/
 nosetests.xml
 coverage.xml
 *.log
+
 
 ts
 .env

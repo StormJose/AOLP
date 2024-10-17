@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="{% static 'css/geral.css'%}">
     <link rel="stylesheet" href="{% static 'css/cadastro.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +20,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     {% comment %} <link rel="shortcut icon" href="IMGS/favicon-32x32.png" type="image/x-icon"> {% endcomment %}
     <title>Academy - Cadastro</title>
-
    
-        </head>
-        <body>
+</head>
+    <body>
+        <section class="login-register--section">
             <form name="formulario" class="form-cadastro" id="form" action="{% url 'cadastro' %}" method="POST">
                 <a href="/"
                 >
                     <img class="logo--alt-2" src="{% static 'image/LOGO-ACADEMY.png' %}" alt="" width="200px" height="150px">
                 </a>
-                <label class="text-login" for="fname">Cadastro</label>
+                <h1 class="heading-primaria" for="fname">Ingresse hoje</h1>
+                <div class="btn-wrapper">
+                    <span>Já possui cadastro?</span>
+                    <a class="btn--go-to-login-register" href="{% url 'login' %}">
+                        
+                        Login
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="small-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                        </svg>
+                    </a>
+                </div>
                 <div class="container-inputs">
                     {% csrf_token %}
                     {% if request.session.error_msg %}
@@ -82,7 +93,7 @@
                             <span class="mensagem--erro" data-label="radio-opcoes"></span>
                         </div>
                         </div>
-                        <button id="botao-cadastro" class="btn btn--register-login" type="submit" value="Criar conta" >
+                        <button id="botao-cadastro" class="btn btn--main btn--register-login" type="submit" value="Criar conta" >
                             Criar conta
                             <div class="spinner"></div>
                         </button>
@@ -90,9 +101,9 @@
                  
             </form>
            
-            <footer class="footer">
-                <img src="{% static 'img/logo--alt.png' %}" alt="" width="200px" height="30px">
-            </footer>
-        
+        </section>
+        <footer class="footer">
+            <img src="{% static 'img/logo--alt.png' %}" alt="" width="200px" height="30px">
+        </footer>
 </body>
 </html>

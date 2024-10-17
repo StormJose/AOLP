@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="{% static '/css/geral.css' %}">
     <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,17 +19,29 @@
     <link rel="shortcut icon" href="IMGS/favicon-32x32.png" type="image/x-icon">
 
     <title>Academy-Login</title>
+
     </head>
     <body>
-    <form action="{% url 'login' %}" method="post" name="formulario" class="form-cadastro" id="form">
-       
-        <a href="/"
-        >
-        <img class="logo--alt-2" src="{% static 'image/LOGO-ACADEMY.png' %}" alt="" width="200px" height="150px">
-    </a>
-        <h3 class="text-login" for="fname">Acesse a plataforma</h3>
 
-            <div class="container-inputs">
+    <section class="login-register--section">
+
+    <form action="{% url 'login' %}" method="post" name="formulario" class="form-cadastro" id="form">
+        <a href="/"
+            >
+            <img class="logo--alt-2" src="{% static 'image/LOGO-ACADEMY.png' %}" alt="" width="200px" height="150px">
+        </a>
+        <h1 class="heading-primaria" for="fname">Bem vindo de volta</h1>
+        <div class="btn-wrapper">
+            <span>Não tem cadastro?</span>
+            <a class="btn--go-to-login-register" href="{% url 'cadastro'  %}">
+                
+                Registre-se
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="small-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+                </svg>
+            </a>
+        </div>
+        <div class="container-inputs">
             {% csrf_token %}
                  {% if request.session.error_msg %}
                     <p style="
@@ -48,17 +61,16 @@
                         <input class="inputs password senha" type="password" name="senha" id="senha">   
                         <span class="mensagem--erro" data-label="senha"></span>
                     </div> 
-                    <button id="botao-login" class="btn btn--register-login" type="submit" value="Criar conta" >
+                    <button id="botao-login" class="btn btn--main btn--register-login" type="submit" value="Criar conta" >
                         Login
                         <div class="spinner"></div>
                     </button>
                 </div>
-            <div class="container-criar-conta">
-                <a href="/cadastro" ><label for="fname">Não possui conta? <b><i>Crie uma já!</i></b></label></a>
-            </div>
-        <div class="footer">
-            <img src="{% static 'img/logo--alt.png' %}" alt="" width="200px" height="30px">
-        </div>
-    </form>
+            
+                <footer class="footer">
+                    <img src="{% static 'img/logo--alt.png' %}" alt="" width="200px" height="30px">
+                </footer>
+            </form>
+</section>
 </body>
 </html>
