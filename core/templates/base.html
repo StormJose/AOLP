@@ -20,43 +20,180 @@
     <title>{% block title %}Academy One {% endblock %}</title>
 </head> 
 <body>
-    <header class="header fixed">   
-        <div class="dropdown sobre-dropdown">
-            <a href="{% url 'home'  %}" class="logo-container">
-                <img class="logo" src="{% static  'image/logo.png' %}" alt="logo"> 
+    <header class="header fixed">
+        <div class="dropdown">
+            <a href="{% url 'home' %}" class="logo-container">
+                <img class="logo" src="{% static 'image/logo.png' %}" alt="logo">
             </a>
             <!-- QUANDO NÃO LOGADO, MOSTRAR BOTÕES DE CADASTRO / LOGIN -->
-            
-            <!-- <div class="btns-box">
-                <a class="btn btn--main" href="#">Cadastro</a> 
-                <a class="btn btn--alt" href="#">Login</a>
-            </div> -->
+
             <div class="btns-box"> 
+
                 {% if usuario %}
-                <div>
+         
                     <span 
                         class="btn-dropdown"
                         data-dropdown="dropdown-2"
                         aria-expanded="false"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-icon notification-icon--close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="small-icon notification-icon--close">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="nav-icon notification-icon--open">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="small-icon notification-icon--open">
                             <path fill-rule="evenodd" d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z" clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <div class="notification-dropdown dropdown-windows"   
-                         id="dropdown-2"
+
+                <div class="nav-perfil-img">
+                    <img 
+                    class="btn-dropdown"
+                    data-dropdown="dropdown-1"
+                    aria-expanded="false"
+                    src="assets/eredin-profile.jpeg" alt="Imagem de perfil" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="arrow--icon">
+                        <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd" />
+                    </svg>
                     
+                </div>
+           
+            {% else %}
+            {% endif %}
+                  
+            <span class="menu-btn--open">
+                <svg class="menu-btn nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>  
+            </span>
+            <span class="menu-btn--close hidden">
+                <svg class="menu-btn nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>     
+            </span>
+            
+        </div>
+        
+        
+        
+        <ul class="nav-items--list hidden">
+            <!-- EXEMPLO DE ITEM DO MENU, FAVOR NÃO EXCLUIR -->
+            <li class="nav-item">
+                <div class="nav-link-box" data-id="2">
+                    <a href="{% url 'estacoes:cursos' %}" class="nav-link {% if request.path == '/estacoes/cursos/' %} nav-link--active {% endif %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-list-icon nav-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122" />
+                        </svg>    
+                        Cursos
+                        <!-- <img class="arrow--icon arrow--open arrow--open--2" src="/assets/icons/arrow-right.svg" alt="arrow right" />
+                        <img class="arrow--icon arrow--close arrow--close--2 arrow--hidden" src="/assets/icons/arrow-down.svg" alt="arrow down" /> -->
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link-box" data-id="4">
+                    <a href="{% url 'sobre' %}" class="nav-link {% if request.path == '/sobre/' %} nav-link--active {% endif %} ">
+                        <svg class="nav-list-icon nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                        </svg> Sobre
+                    </a>
+                    <!-- <img  class="icon arrow--open arrow--open--4" src="/assets/icons/arrow-right.svg" alt="arrow right"/>                  
+                    <img  class="icon arrow--close arrow--close--4 arrow--hidden"  src="/assets/icons/arrow-down.svg" alt="arrow down"/> -->
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link-box" data-id="4">
+                    <a href="{% url 'forum' %}"  class="nav-link {% if request.path == '/forum/' %} nav-link--active {% endif %}">
+                        <svg class="nav-list-icon nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                        </svg> Fórum
+                    </a>
+                    <!-- <img  class="icon arrow--open arrow--open--4" src="/assets/icons/arrow-right.svg" alt="arrow right"/>                  
+                    <img  class="icon arrow--close arrow--close--4 arrow--hidden"  src="/assets/icons/arrow-down.svg" alt="arrow down"/> -->
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link-box" data-id="5">
+                    <a href="#EmBreve" class="nav-link">
+                        <svg class="nav-list-icon nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                        </svg> Eventos
+                    </a>
+                </div>
+                
+            </li>
+            <li class="nav-item">
+                {% if usuario %}
+                {% else %}
+                <div class="btns-box">
+                        <a class="btn btn--main" href="{% url 'cadastro' %}">Cadastro</a> 
+                        <a class="btn btn--alt"  href="{% url 'login' %}">Login</a>
+                    </div>
+                {% endif %}    
+                </li> 
+                    
+            </ul>
+            <!-- QUANDO NÃO LOGADO, MOSTRAR BOTÕES DE CADASTRO / LOGIN -->
+            <!--<div class="btns-box">
+                    <a class="btn btn--main" href="#">Cadastro</a> 
+                    <a class="btn btn--alt" href="#">Login</a>
+                </div> -->
+
+                
+            <!-- DROPDOWNS -->
+            <div class="dropdown-windows modal-window" id="dropdown-1">
+                <div class="menu-content">
+                    <div class="dropdown-header">
+                        <span class="username">Usuário</span>
+                        <span class="btn--close-modal">
+                            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>  
+                        </span>
+                    </div>
+                    <span class="user-email">*****@mail.com</span>
+                    <ul class="user-items--list">
+                        <li>
+                            <a href="/profile.html" class="nav-link ">                    
+                                Perfil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">                      
+                                Discussões                                
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/settings.html" class="nav-link">
+                                Configurações
+                            </a>        
+                        </li>
+                        <li class="nav-item">    
+                            <a href="{% url 'logout' %}" class="nav-link logout">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="small-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+                                </svg>                        
+                                Sair da conta
+                            </a>   
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="notification-dropdown dropdown-windows modal-window"   
+                         id="dropdown-2"
                          >
                         <div class="dropdown-header">
-                            <h4 class="heading-terciaria">
+                            <h2 class="heading-terciaria">
                                 Notificações
-                            </h4>
+                            </h2>
+
+                            <span class="btn--close-modal">
+                                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>  
+                            </span>
                         </div>
                         <!-- QUANDO HOUVER NOTIFICAÇÕES -->
-                        <!-- <ul class="notification-list">
+                        {% comment %} <ul class="notification-list">
                             <li>
                                 <a class="notification">
                                     <img src="" alt="remetente" />
@@ -75,7 +212,7 @@
                                     </div>
                                 </a>
                             </li>
-                        </ul> -->
+                        </ul> {% endcomment %} 
 
                         <!-- QUANDO NÃO HOUVER NOTIFICAÇÕES -->
                         <div class="empty-notifications-box">
@@ -89,278 +226,10 @@
                         </div>
                         <!-- <a class="btn marked-seen-btn" href="#">Marcar todas como lida</a> -->
                     </div>
+                    
                 </div>
-                
-                {% endif %}
 
-                {% if usuario %}
-                <div class="nav-perfil-img use-dropdown-btn--open" id="use-dropdown-btn--open">
-                    <img src="{% static 'imagens/usuario.foto_perfil.imagem'  %}" alt="profile">
-                    <div id="user-dropdown" side="right">
-                      <div class="menu-content">
-                          <span class="username">{{usuario.nome}}</span>
-                          <span class="user-email">{{usuario.email}}</span>
-                          <ul class="user-items--list">
-                              <!-- EXEMPLO DE ITEM DO MENU, FAVOR NÃO EXCLUIR -->
-                        <!-- <li class="nav-item">
-                            <div class="nav-link-box" data-id="1">
-                                <span class="nav-link">
-                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="m7.875 14.25 1.214 1.942a2.25 2.25 0 0 0 1.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 0 1 1.872 1.002l.164.246a2.25 2.25 0 0 0 1.872 1.002h2.092a2.25 2.25 0 0 0 1.872-1.002l.164-.246A2.25 2.25 0 0 1 16.954 9h4.636M2.41 9a2.25 2.25 0 0 0-.16.832V12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 0 1 .382-.632l3.285-3.832a2.25 2.25 0 0 1 1.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0 0 21.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 0 0 2.25 2.25Z" />
-                                  </svg>
-                                  Itens salvos</span>
-                                <img  class="icon arrow--open arrow--open--1"   src="/assets/icons/arrow-right.svg" alt="arrow right"/>
-                                <img  class="icon arrow--close arrow--close--1 arrow--hidden"  src="/assets/icons/arrow-down.svg" alt="arrow down"/>
-                            </div>
-                            <ul  class="nav-submenu-list nav-submenu-list--active nav-submenu-list--1">
-                               <li>
-                                   <a class="submenu-link"  href="#">Estações</a>
-                                </li>
-                               <li>
-                                   <a class="submenu-link"  href="#">Dev</a>
-                                </li>
-                               <li>
-                                   <a class="submenu-link"  href="#"></a>
-                                </li>
-                                <li>
-                                   <a class="submenu-link" href="#">Exemplo</a>
-                                </li>    
-                            </ul>
-                        </li> -->
-                        <!-- <li class="nav-item" >
-                            <div class="nav-link-box" data-id="1">
-                              <span class="nav-link">                            
-                                  Atividades
-                              </span>   
-                              <img  class="arrow--icon arrow--open arrow--open--1" src="/assets/icons/arrow-right.svg" alt="arrow right"/>                          
-                              <img  class="arrow--icon arrow--close arrow--close--1 arrow--hidden" src="/assets/icons/arrow-down.svg" alt="arrow down"/>
-                            </div>
-                            <ul class="nav-submenu-list nav-submenu-list--active nav-submenu-list--6">
-                              <li>
-                                  <a class="submenu-link" href="#">    
-                                  Exercícios</a>
-                              </li>
-                              <li>
-                                  <a class="submenu-link"  href="#">    
-                                  Provas
-                                  </a>
-                              </li>  
-                          </ul> 
-                      </li>    -->
-                      <!-- <li class="nav-item">
-                          <div class="nav-link-box">
-                                <a href="#" class="nav-link">                                 
-                                  Comunicados</a>
-                                <img  class="icon arrow--open arrow--open--4" src="/assets/icons/arrow-right.svg" alt="arrow right"/>                  
-                                <img  class="icon arrow--close arrow--close--4 arrow--hidden"  src="/assets/icons/arrow-down.svg" alt="arrow down"/>
-                          </div>           
-                        </li> -->
-                        <li class="nav-item">
-                            <div class="nav-link-box">
-                                <a href="/perfil" class="nav-link">
-                                  Meu Perfil
-                              </a>
-                            </div>
-                            <!-- <ul class="nav-submenu-list nav-submenu-list--active nav-submenu-list--5">
-                                <li>
-                                    <a class="submenu-link"  href="#">Exemplo</a>
-                                </li>
-                                <li>
-                                    <a class="submenu-link"  href="#">Exemplo</a>
-                                </li>
-                                <li>
-                                    <a class="submenu-link"  href="#">Exemplo</a>
-                                </li>
-                                <li>
-                                    <a class="submenu-link" href="#">Exemplo</a>
-                                </li>    
-                            </ul> -->
-                        </li>
-                        <li class="nav-item">
-                            <div class="nav-link-box">
-                                <a href="/logout" class="nav-link logout">Sair da conta</a>
-                            </div>
-                        </li>
-                    </ul>
-            </div>
-           </div>
-            </div>
-            
-            {% else %}
-            <!-- MOSTRAR NADA -->
-
-            {% endif %}
-
-            <span class="menu-btn--open">
-                <svg class="menu-btn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-                </svg>  
-            </span>
-            <span class="menu-btn--close hidden">
-                <svg class="menu-btn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
-                </svg>     
-            </span>  
-        </div> 
-            
-            <ul class="nav-items--list hidden">
-                <!-- EXEMPLO DE ITEM DO MENU, FAVOR NÃO EXCLUIR -->
-                
-                <!-- <li class="nav-item">
-                    <div class="nav-link-box" data-id="1">
-                        <span class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m7.875 14.25 1.214 1.942a2.25 2.25 0 0 0 1.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 0 1 1.872 1.002l.164.246a2.25 2.25 0 0 0 1.872 1.002h2.092a2.25 2.25 0 0 0 1.872-1.002l.164-.246A2.25 2.25 0 0 1 16.954 9h4.636M2.41 9a2.25 2.25 0 0 0-.16.832V12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 0 1 .382-.632l3.285-3.832a2.25 2.25 0 0 1 1.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0 0 21.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 0 0 2.25 2.25Z" />
-                            </svg>
-                            Itens salvos</span>
-                            <img  class="icon arrow--open arrow--open--1"   src="/assets/icons/arrow-right.svg" alt="arrow right"/>
-                            <img  class="icon arrow--close arrow--close--1 arrow--hidden"  src="/assets/icons/arrow-down.svg" alt="arrow down"/>
-                        </div>
-                        <ul  class="nav-submenu-list nav-submenu-list--active nav-submenu-list--1">
-                            <li>
-                                <a class="submenu-link"  href="#">Estações</a>
-                            </li>
-                            <li>
-                                <a class="submenu-link"  href="#">Dev</a>
-                            </li>
-                            <li>
-                                <a class="submenu-link"  href="#"></a>
-                            </li>
-                            <li>
-                                <a class="submenu-link" href="#">Exemplo</a>
-                            </li>    
-                        </ul>
-                    </li> -->
-                    <li class="nav-item">
-                        <a href="{% url 'estacoes:cursos' %}" class="nav-link">
-                            <div class="nav-link-box" data-id="2">
-                                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122"></path>
-                                </svg>
-                                Cursos
-                                {% comment %} <img class="arrow--icon arrow--open arrow--open--2" src="{% static 'image/icons/arrow-right.svg' %}" alt="arrow right">                          
-                                <img class="arrow--icon arrow--close arrow--close--2 arrow--hidden" src="{% static "image/icons/arrow-down.svg" %}" alt="arrow down"> {% endcomment %}
-                            </div>
-                        </a>   
-                        {% comment %} <ul class="nav-submenu-list nav-submenu-list--2">
-                            <li>
-                                <a class="submenu-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-                                    </svg>
-                                    Dev</a>
-                                </li>
-                                <li>
-                                    <a class="submenu-link" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-                                        </svg>
-                                        RH
-                                    </a>
-                                </li>  
-                                <li>
-                                    <a class="submenu-link" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-                                        </svg>
-                                        GET
-                                    </a>
-                                </li>  
-                                <li>
-                                    <a class="submenu-link" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-                                        </svg>
-                                        PMO
-                                    </a>
-                                </li>  
-                                <li>
-                                    <a class="submenu-link" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-                                        </svg>
-                                        SDR
-                                    </a>
-                                </li>  
-                                <li>
-                                    <a class="submenu-link" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-                                        </svg>
-                                        MKT
-                                    </a>
-                                </li>  
-                               
-                            </ul>  {% endcomment %}
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'sobre' %}" class="nav-link">
-                                <div class="nav-link-box" data-id="4">
-                                    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"></path>
-                                    </svg>      
-                                    <!-- <img  class="icon arrow--open arrow--open--4" src="/assets/icons/arrow-right.svg" alt="arrow right"/>                  
-                                    <img  class="icon arrow--close arrow--close--4 arrow--hidden"  src="/assets/icons/arrow-down.svg" alt="arrow down"/> -->
-                                    Sobre
-                                </div>
-                            </a>
-                                
-                            </li>
-                            <li class="nav-item">
-                                <a href="{% url 'forum' %}" class="nav-link">
-                                <div class="nav-link-box" data-id="4">
-                                  <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"></path>
-                                    </svg>         
-                                    <!-- <img  class="icon arrow--open arrow--open--4" src="/assets/icons/arrow-right.svg" alt="arrow right"/>                  
-                                    <img  class="icon arrow--close arrow--close--4 arrow--hidden"  src="/assets/icons/arrow-down.svg" alt="arrow down"/> -->
-                                    Fórum
-                                </div>
-                            </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <div class="nav-link-box" data-id="5">
-                                        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46"></path>
-                                        </svg>  
-                                        Eventos
-                                    </div>
-                                </a>
-                                <!-- <ul class="nav-submenu-list nav-submenu-list--active nav-submenu-list--5">
-                                    <li>
-                                        <a class="submenu-link"  href="#">Exemplo</a>
-                                    </li>
-                                    <li>
-                                  <a class="submenu-link"  href="#">Exemplo</a>
-                              </li>
-                              <li>
-                                  <a class="submenu-link"  href="#">Exemplo</a>
-                                </li>
-                                <li>
-                                    <a class="submenu-link" href="#">Exemplo</a>
-                                </li>    
-                            </ul> -->
-                        </li>
-                        
-                        {% if usuario %}
-                            <!-- NÃO MOSTRAR NADA -->
-                        {% else %}
-
-                            <li>
-                                <div class="btns-box">
-                                    <a class="btn btn--main" href="/cadastro">Cadastro</a> 
-                                    <a class="btn btn--alt" href="/login">Login</a>
-                                </div>
-                            </li>                     
-                   
-                        {% endif %}
-
-                    </ul>
-            
-            
-                </div> 
-
+        </div>
     </header>
     <main>
         {% block content %}

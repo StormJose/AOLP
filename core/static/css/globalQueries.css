@@ -97,34 +97,32 @@ estilos definidos em geal.css
 
 
    /* geral */
-   .heading-primaria {
-    font-size: 4rem;
-  } 
+    .heading-primaria {
+        font-size: 4rem;
+    } 
 
-  .heading-secundaria {
-    font-size: 3.2rem;
-  }
-
-  .heading-terciaria {
-    font-size: 1.8rem;
-}
-
-  .dropdown {
-    opacity: 100;
-    z-index: 9999;
-    position: fixed;
-    top: 0;
-    left: 0;
- 
-    background-color: #FFF;
-    padding: 1.2rem 2.4rem;
-
-    grid-template-columns: 0.4fr 2fr ;
-
-    transition: 0.5s all;
+    .heading-secundaria {
+        font-size: 3.2rem;
     }
 
+    .heading-terciaria {
+        font-size: 1.8rem;
+    }
 
+    .dropdown {
+        opacity: 100;
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+    
+        background-color: #FFF;
+        padding: 1.2rem 2.4rem;
+
+        grid-template-columns: 0.4fr 2fr ;
+
+        transition: 0.5s all;
+    }
 
     .dropdown  .nav-items--list {
         grid-column: 2;
@@ -138,8 +136,8 @@ estilos definidos em geal.css
         gap: 3.2rem;
     }
 
-
-    .dropdown .nav-submenu-list--active {
+    /* dropdown para links da navegação (submenu) */
+    /* .dropdown .nav-submenu-list--active {
         position: absolute;
         background-color: inherit;
         left: 0;
@@ -155,6 +153,39 @@ estilos definidos em geal.css
         border-radius: 11px;
 
         box-shadow: 1px 1.5px 20px 1px rgba(0, 0, 0, 0.137);
+    } */
+
+    /* garantindo que os botões de cadastro e login fiquem na extremidade direita */
+    .nav-item:last-child {
+        margin-left: auto;
+    } 
+
+    .dropdown .btns-box {
+        grid-column: 3;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    } 
+
+
+    .dropdown-windows {
+
+        top: 50px;
+        left: auto;
+ 
+        width: auto;
+        height: auto;
+
+        
+        transition: 0.30s all;
+    }
+
+    .notification-dropdown {
+        right: 100px;
+    }
+
+    #dropdown-1 {
+        right: 75px;
     }
 
     .dropdown .nav-submenu-list--active {
@@ -166,55 +197,20 @@ estilos definidos em geal.css
     }
 
 
-    .nav-link-box {
-        /* padding: 0.8rem 1.2rem; */
-        border-radius: 7px;
-        font-weight: 500;
-        gap: 0.8rem;
-    }
-
-
     .nav-link-box--active {
         background-color: #fff;
     }
 
-    .nav-link-box:hover,
-    .instrutor .nav-link-box--active {
-        background-color: #f1f3f5;
-    }
-
-    .instrutor .nav-link-box:hover, 
-    .instrutor .nav-link-box--active {
-        background-color: #1d267d;
-        color:#f1f3f5;
-    }
-
-
-    /* Link: Eventos */
-    .nav-items--list li:last-child {
-        align-self: flex-end;
-    }
-
     .nav-item { 
         width: auto;
-        text-decoration: none;
-        border-radius: 11px;
-        color: inherit;
+    }
+
+    .nav-link {
+        font-weight: 500;
     }
 
     .nav-icon {
         display: none;
-    }
-
-    .dropdown .btns-box {
-        grid-column: 3;
-    }
-
-    .dropdown .btns-box {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
     }
 
 
@@ -248,7 +244,9 @@ estilos definidos em geal.css
         right: 50px;
     }
 
-     /* footer */
+
+
+    /* footer */
    .footer-navigation {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 2.4rem;
