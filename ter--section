@@ -1,0 +1,141 @@
+[33mcommit c33cfdf54dcafd9c1ad8899203c7f3ea17b888b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeatures/cadastro[m[33m, [m[1;31morigin/features/navegacao[m[33m)[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Fri Oct 18 10:30:21 2024 -0300
+
+    [fix] Formulário sobrepondo o footer
+
+[33mcommit 79a876b309a79b12340c300a78644d9898abecab[m
+Author: stormJose <ricardo23feitosa@gmail.com>
+Date:   Fri Oct 18 00:30:15 2024 -0300
+
+    [feat - navegação] Consolida as novas funcionalidades da navegação
+    
+    Acesso rápido à notificações na barra de navegação
+    
+    Melhora a lógica de controle de modal windows (popups)
+    
+    Refatora parte do CSS geral
+    
+    Remove arquivos de imagem duplicados
+
+[33mcommit 937d854cc43751d48ec770dd81e287453b8b430a[m
+Merge: db5f5dc 733e700
+Author: stormJose <ricardo23feitosa@gmail.com>
+Date:   Thu Oct 17 18:55:19 2024 -0300
+
+    Merge branch 'features/navegacao' of https://github.com/Academy-One/AOLP into features/navegacao
+
+[33mcommit db5f5dc62390580655799107257d65127ab94780[m[33m ([m[1;31morigin/features/cadastro[m[33m)[m
+Merge: fc2974e 439fcfb
+Author: stormJose <ricardo23feitosa@gmail.com>
+Date:   Thu Oct 17 18:49:02 2024 -0300
+
+    Merge branch 'features/cadastro' of https://github.com/Academy-One/AOLP into features/cadastro
+
+[33mcommit fc2974e98f35a37847a3aa019bc0e2d61a4a1c8a[m
+Author: stormJose <ricardo23feitosa@gmail.com>
+Date:   Thu Oct 17 18:40:47 2024 -0300
+
+    Remove arquivos duplicados
+
+[33mcommit 733e700a460e721b472ae044d2d068ba9fce57d5[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Thu Oct 17 13:07:09 2024 -0300
+
+    [feat - navegacao) Adiciona notificações rápidas (implementação parcial)
+
+[33mcommit 439fcfba043ef6b8b12c2807adfc1683ffb40eb9[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Thu Oct 17 12:04:19 2024 -0300
+
+    [fix] Corrige formulário sobrepondo o rodapé
+
+[33mcommit 5e733e4514663722f28e0d519f33a1c2475daa73[m
+Author: stormJose <ricardo23feitosa@gmail.com>
+Date:   Wed Oct 16 21:24:52 2024 -0300
+
+    Melhorias de navegabilidade e refatoração de código+
+    
+    [feat] Melhoria da navegabilidade das páginas de login e cadastro
+    
+    [fix] Corrige inconsistência da UI que era causada com o aparecimento das mensagens de erro de input
+    
+    [fix] Refatoração de templates e CSS, assim, removendo redundâncias
+
+[33mcommit f4495af6fd82569bf8f7702748181708ee6d1fe6[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Thu Sep 19 12:00:28 2024 -0300
+
+    fix typo at README.md
+
+[33mcommit 850eacf4ebf60a52d6a358e9b7f5ff533732cfaf[m
+Author: DeyideDhyonata <deyvide.7013@gmail.com>
+Date:   Thu Sep 19 11:44:02 2024 -0300
+
+    Update README.md
+
+[33mcommit 02f9f1294791d75be235d5c97b04ceca3acbc4dd[m[33m ([m[1;31morigin/features/gerenciamento-de-conteudo[m[33m)[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Thu Sep 12 12:54:10 2024 -0300
+
+    feat Reformulação de formulários de gestão de conteúdo
+    
+    - Correção de redirecionamentos indevidos após submissão (cursos)
+    
+    - Validação de URL de vídeo (aula)
+
+[33mcommit 022cd5749dba0cae595bc3183835c7f9333c30c1[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Wed Sep 11 12:48:07 2024 -0300
+
+    Add setup inicial para melhor fluxo de navegação na gestão de conteúdo
+    
+     - Permitir adicionar aulas a cursos específicos em /estacoes/cursos/admin
+
+[33mcommit 67be5165f5c9c99a5e934fc43326e6dd64547995[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Wed Sep 11 11:54:18 2024 -0300
+
+    Add db.sqlite3
+
+[33mcommit 08085bf934f37ebb305a20708eae022028e8bc84[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Wed Sep 11 10:50:23 2024 -0300
+
+    feat inserindo db.sqlite3
+
+[33mcommit 9eea0138b0dee3dadf5409596678cb29ea5d6181[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Wed Sep 11 10:46:46 2024 -0300
+
+    fix view - estacao_create passando estacao.pk desnecessariamente ao redirecionar para 'estacoes:estacao_list
+
+[33mcommit f82e37dbdde7c4ec08d90f49037832a27603b7e1[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Tue Sep 10 13:00:54 2024 -0300
+
+    Fix Formulários de gerenciamento de cursos e estações\n - Publicar e editar cursos\n - Publicar e editar estações
+
+[33mcommit 4fd591032600491bafda776c7333360a4172a985[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Tue Sep 10 11:51:19 2024 -0300
+
+    [fix] Criação de cursos
+
+[33mcommit 264834c5b89ebc897e76a15ed0fc5b685ca256b9[m
+Author: StormJose <ricardo23feitosa@gmail.com>
+Date:   Mon Sep 9 13:01:33 2024 -0300
+
+    atualiza formulários de gestão de conteúdo
+
+[33mcommit 958f2c464f23e6168c473410a42e4f13ea033099[m
+Author: stormJose <ricardo23feitosa@gmail.com>
+Date:   Mon Sep 9 00:20:47 2024 -0300
+
+    Add README.md
+
+[33mcommit de91c20d1500084f849d0f6fbe2b001c66d24caf[m
+Author: stormJose <ricardo23feitosa@gmail.com>
+Date:   Mon Sep 9 00:05:38 2024 -0300
+
+    Atualiza scripts de testes
