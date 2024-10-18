@@ -60,7 +60,7 @@ form.addEventListener('submit', function (e) {
     if (!isValidPassword) {
       mensagem = `${senha.getAttribute(
         "id"
-      )} deve conter pelo menos 1 número e 1 caractere especial`;
+      )} deve conter pelo menos 1 letra maiúscula, número e 1 caractere especial`;
 
       setErrorMessage(senha, mensagem);
       isValid = false;
