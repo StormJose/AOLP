@@ -28,7 +28,7 @@
             <!-- QUANDO NÃO LOGADO, MOSTRAR BOTÕES DE CADASTRO / LOGIN -->
 
             <div class="btns-box"> 
-         
+                {% if usuario %}
                     <span 
                         class="btn-dropdown btn--open-modal"
                         data-modal="dropdown-2"
@@ -53,6 +53,8 @@
                     </svg>
                     
                 </div>
+
+            {% endif %}
                   
             <span class="menu-btn--open">
                 <svg class="menu-btn nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-icon">
@@ -118,19 +120,16 @@
             <li class="nav-item">
                 {% if usuario %}
                 {% else %}
-              {% comment %}   <div class="btns-box">
+                <!-- QUANDO NÃO LOGADO, MOSTRAR BOTÕES DE CADASTRO / LOGIN -->
+                <div class="btns-box">
                         <a class="btn btn--main" href="{% url 'cadastro' %}">Cadastro</a> 
                         <a class="btn btn--alt"  href="{% url 'login' %}">Login</a>
-                    </div> {% endcomment %}
+                    </div>
                 {% endif %}    
                 </li> 
                     
             </ul>
-            <!-- QUANDO NÃO LOGADO, MOSTRAR BOTÕES DE CADASTRO / LOGIN -->
-            <!--<div class="btns-box">
-                    <a class="btn btn--main" href="#">Cadastro</a> 
-                    <a class="btn btn--alt" href="#">Login</a>
-                </div> -->
+         
 
                 
             <!-- DROPDOWNS -->
