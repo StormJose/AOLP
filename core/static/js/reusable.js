@@ -4,7 +4,6 @@
 const body = document.querySelector("body");
 const sections = document.querySelectorAll("section");
 
-const btnsDropdown = document.querySelectorAll(".btn-dropdown");
 const dropdownWindows = document.querySelectorAll(".dropdown-windows");
 
 // Navigation Dropdown
@@ -32,7 +31,7 @@ const achievementTitle = document.querySelector(".conquista-título");
 // Copyright
 const copyright = document.querySelector(".copyright__year");
 
-// Janela Modal e Overlay
+// Popups
 const overlay = document.querySelector(".overlay");
 const modalWindows = document.querySelectorAll(".modal-window");
 const btnOpenModal = document.querySelectorAll(".btn--open-modal");
@@ -93,53 +92,74 @@ mediaQuery.addEventListener("change", handleMediaQueryChange);
 // Menus de dropdown (Notificações e Perfil)
 // Para fins de boas práticas, é importante especificar se o elemento está expandido ou não.
 const setAriaExpandedFalse = function () {
-  dropdownBtn.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+  btnOpenModal.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
 };
 
+// Responsável por fechar os popups
 // Responsável por fechar os menus
-const closeDropdownMenu = function () {
-  dropdownWindows.forEach((drop) => {
+const closeModalWindows = function () {
+  setAriaExpandedFalse()
+  modalWindows.forEach((drop) => {
     drop.classList.remove("modal-window--active");
     drop.addEventListener("click", (e) => e.stopPropagation());
   });
-  btnsDropdown.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
 };
 
-btnsDropdown.forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    const dropdownIndex = btn.dataset.dropdown;
+// Listeners para controle de Pop-ups
+btnOpenModal.forEach(function(btn) {
+  btn.addEventListener('click', (e) => {
+    
+    const dropdownIndex = btn.dataset.modal;
     const dropdownElement = document.getElementById(dropdownIndex);
+    console.log(dropdownIndex)
 
-    // Fechar todos os dropdowns
-    dropdownWindows.forEach((window) => {
-      if (window !== dropdownElement) {
-        window.classList.remove("modal-window--active");
-        const button = document.querySelector(`[data-dropdown="${window.id}"]`);
-        if (button) {
-          button.setAttribute("aria-expanded", "false");
+      // Fechar todos os dropdowns
+      modalWindows.forEach((window) => {
+        if (window !== dropdownElement) {
+          window.classList.remove("modal-window--active");
+          const button = document.querySelector(
+            `[data-dropdown="${window.id}"]`
+          );
+          if (button) {
+            button.setAttribute("aria-expanded", "false");
+          }
         }
-      }
-    });
+      });
 
-    // Alternar o dropdown clicado
-    const isActive = dropdownElement.classList.toggle("modal-window--active");
-    btn.setAttribute("aria-expanded", isActive ? "true" : "false");
+      // Alternar o dropdown clicado
+      const isActive = dropdownElement.classList.toggle("modal-window--active");
+      btn.setAttribute("aria-expanded", isActive ? "true" : "false");
 
-    e.stopPropagation();
-  });
-});
+      e.stopPropagation()
+  })
+})
+
+btnCloseModal.forEach(function(btn) {
+  setAriaExpandedFalse()
+  btn.addEventListener('click', () => {
+    modalWindows.forEach((modal) =>
+      modal.classList.remove("modal-window--active")
+    );
+  })
+})
 
 // Fechar dropdowns ao clicar fora
-document.addEventListener("click", () => {
-  closeDropdownMenu();
-  dropdownWindows.forEach((window) => {
-    const btn = document.querySelector(`[data-dropdown="${window.id}"]`);
-    if (btn) btn.setAttribute("aria-expanded", "false");
-  });
-});
+document.addEventListener("click", (e) => {
+    closeModalWindows()
+    modalWindows.forEach((window) => {
+      const button = document.querySelector(`[data-dropdown="${window.id}"]`);
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }  
+    });  
+  
+});  
+
+
+
+
 
 // Gerenciamento de submenus de navegação
-
 // Garante que todos os submenus existentes estarão desativados por padrão
 subMenus.forEach((menu) => menu.classList.remove("nav-submenu-list--active"));
 
@@ -194,26 +214,9 @@ subMenus.forEach((menu) => menu.classList.remove("nav-submenu-list--active"));
 //   menu.addEventListener("click", (e) => manageSubMenu(e))
 // );
 
-// Listeners para controle de Pop-ups
-btnOpenModal.forEach(function (btn) {
-  btn.addEventListener("click", (e) => {
-    closeDropdownMenu();
 
-    const clicked = e.currentTarget;
-    console.log(clicked.dataset.modal);
-    document
-      .getElementById(`${clicked.dataset.modal}`)
-      .classList.add("modal-window--active");
-  });
-});
 
-btnCloseModal.forEach(function (btn) {
-  btn.addEventListener("click", () => {
-    modalWindows.forEach((modal) =>
-      modal.classList.remove("modal-window--active")
-    );
-  });
-});
+
 
 // Redirecionar links
 document.addEventListener("click", function (e) {

@@ -4,6 +4,10 @@
 /* Formulario */
 /* ========== */
 
+.login--section {
+    height: 100vh;
+}
+
 .register-login-container {
     padding: 0 0 2.4rem 0;
 }

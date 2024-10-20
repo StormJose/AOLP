@@ -28,12 +28,10 @@
             <!-- QUANDO NÃO LOGADO, MOSTRAR BOTÕES DE CADASTRO / LOGIN -->
 
             <div class="btns-box"> 
-
-                {% if usuario %}
          
                     <span 
-                        class="btn-dropdown"
-                        data-dropdown="dropdown-2"
+                        class="btn-dropdown btn--open-modal"
+                        data-modal="dropdown-2"
                         aria-expanded="false"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="small-icon notification-icon--close">
@@ -46,8 +44,8 @@
 
                 <div class="nav-perfil-img">
                     <img 
-                    class="btn-dropdown"
-                    data-dropdown="dropdown-1"
+                    class="btn-dropdown btn--open-modal"
+                    data-modal="dropdown-1"
                     aria-expanded="false"
                     src="assets/eredin-profile.jpeg" alt="Imagem de perfil" />
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="arrow--icon">
@@ -55,9 +53,6 @@
                     </svg>
                     
                 </div>
-           
-            {% else %}
-            {% endif %}
                   
             <span class="menu-btn--open">
                 <svg class="menu-btn nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-icon">
@@ -123,10 +118,10 @@
             <li class="nav-item">
                 {% if usuario %}
                 {% else %}
-                <div class="btns-box">
+              {% comment %}   <div class="btns-box">
                         <a class="btn btn--main" href="{% url 'cadastro' %}">Cadastro</a> 
                         <a class="btn btn--alt"  href="{% url 'login' %}">Login</a>
-                    </div>
+                    </div> {% endcomment %}
                 {% endif %}    
                 </li> 
                     
