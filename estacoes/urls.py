@@ -8,7 +8,6 @@ app_name = 'estacoes'
 urlpatterns = [
     # path('', crud_views.est_curs, name='est_curs'),
     
-    
     ## estacoes
 
     # caso necessário

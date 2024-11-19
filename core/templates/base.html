@@ -14,7 +14,6 @@
    
     <!-- Scripts -->
     <script src="https://www.youtube.com/iframe_api"></script>
-
     <script defer src="{% static 'js/reusable.js' %}"></script>
 
     <title>{% block title %}Academy One {% endblock %}</title>
@@ -32,8 +31,8 @@
                 {% if usuario %}
          
                     <span 
-                        class="btn-dropdown"
-                        data-dropdown="dropdown-2"
+                        class="btn-dropdown btn--open-modal"
+                        data-modal="dropdown-2"
                         aria-expanded="false"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="small-icon notification-icon--close">
@@ -46,10 +45,10 @@
 
                 <div class="nav-perfil-img">
                     <img 
-                    class="btn-dropdown"
-                    data-dropdown="dropdown-1"
+                    class="btn-dropdown btn--open-modal"
+                    data-modal="dropdown-1"
                     aria-expanded="false"
-                    src="assets/eredin-profile.jpeg" alt="Imagem de perfil" />
+                    src="{% static 'image/profile-avatar.jpeg' %}" alt="Imagem de perfil" />
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="arrow--icon">
                         <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd" />
                     </svg>
@@ -57,7 +56,7 @@
                 </div>
            
             {% else %}
-            {% endif %}
+            {% endif %} 
                   
             <span class="menu-btn--open">
                 <svg class="menu-btn nav-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-icon">
@@ -287,6 +286,7 @@
         </div>
       </footer>
  {% block scripts %}
+      
   {% endblock %}
 </body>
 </html>

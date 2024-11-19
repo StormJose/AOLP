@@ -106,7 +106,7 @@ estilos definidos em geal.css
     }
 
     .heading-terciaria {
-        font-size: 1.8rem;
+        font-size: 2.4rem;
     }
 
     .dropdown {
@@ -213,7 +213,7 @@ estilos definidos em geal.css
         display: none;
     }
 
-
+/* 
     .dropdown .nav-perfil-img {
         display: block;
         margin-left: auto;
@@ -221,7 +221,7 @@ estilos definidos em geal.css
         pointer-events: all;
         opacity: 1;
     
-    }
+    } */
 
     .nav-perfil-img:hover #user-dropdown {
         right: 28px;

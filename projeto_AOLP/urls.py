@@ -7,7 +7,7 @@ from estacoes import crud_views as crud_estacoes
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'estacoes'
+# app_name = 'estacoes'
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -21,7 +21,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
 
-    
     path('usuarios/', views.lista_usuarios,name='lista_usuarios'),
     path('upload/', views.upload, name='upload'),
     path('uploading/', views.uploading, name='uploading'),
@@ -36,8 +35,8 @@ urlpatterns = [
     # a rota de 'cursos'
     path('estacoes/', include('estacoes.urls',  namespace='estacoes')),
 
+    path('perfil/', include('perfil.urls'), name="perfil"),
 
-     
     path('admin/', admin.site.urls),
 
 

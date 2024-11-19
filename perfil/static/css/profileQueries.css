@@ -1,0 +1,568 @@
+/*=========================================================*/
+/* (480px) DISPOSITIVOS MÓVEIS MAIORES / TABLESTS PEQUENOS */
+/*=========================================================*/
+
+@media (min-width: 30em) {
+    /* PAINEIS DO DASHBOARD */
+    .dashboard--painel {
+        gap: 4.4rem;
+    }
+
+    .header-cards--wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+    }   
+
+
+    /* PAINEIS DE DASHBOARD */
+
+    .curso--progresso-texto,
+    .conquista--progresso-texto {
+        font-size: 1.6rem;
+    }
+
+    .curso-instrutor,
+    .conquista-descricao {
+        font-size: 1.4rem;
+    }
+}
+
+
+/*==========================*/
+/* (600px) TABLETS PEQUENOS */
+/*==========================*/
+
+@media (min-width: 37.5em) {
+
+
+
+    /* CABEÇALHO DO PERFIL */
+
+    .perfil-header .perfil-img {
+        max-width: 9.6rem;
+        height: 9.6rem;
+    }
+
+    .conta--progresso-nivel {
+        font-size: 1.4rem;
+    }
+
+    .subnavbar--tab {
+        padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+    }
+
+
+
+    /* PAINEIS DE DASHBOARD */
+    .highlight-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/*========================================*/
+/* (768px) TABLETS E DISPOSITIVOS MAIORES */
+/*========================================*/
+
+@media (min-width: 48em) {
+
+    /* Geral */
+    .scroll-btn {
+        display: none;
+    }
+
+
+    /* CABEÇALHO DO PERFIL (HEADER) */
+    #conta--progresso {
+        height: 0.5rem;
+    }
+    
+
+    .profile-description-box {
+        font-size: 1.4rem;
+    }
+    
+
+    /* SUBNAVBAR */
+
+
+    /* Controle de visualização dos ícones da subnavegação */
+    .instructor-courses-tab-icon,
+    .instructor-courses-tab-icon--active {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    .subnavbar--tab--active .instructor-courses-tab-icon--active {
+        width: 16px;
+        height: 16px
+    }
+
+    .subnavbar--tab .tab-icon,.tab-icon--active {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .tab-icon--active {
+        display: none;
+    }
+
+
+    .subnavbar--tab--active .tab-icon--active,
+    .subnavbar--tab--active .instructor-courses-tab-icon--active {
+        display: block;
+        height: 24px;
+    } 
+
+    .subnavbar--tab--active .tab-icon,  
+    .subnavbar--tab--active .instructor-courses-tab-icon {
+        display: none;
+    }
+
+
+    /* PAINEIS DO DASHBOARD */
+
+    .curso-título {
+        font-size: 2rem;
+    }
+
+    .additional-info-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .additional-info-box h4 {
+        font-size: 1.8rem;
+    }
+
+    .additional-info-text {
+        display: block;
+    }
+
+    .additional-info-link {
+        margin-top: auto;
+        padding: 0.6rem 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .additional-info-text-content .label--progress {
+        margin-top: 4.4rem;
+        align-self: center;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 7px;
+    }
+    
+
+    /* cursos */
+     .lista--cursos {
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+
+
+    /* sem cursos */
+     .no-courses-item {
+        width: 85%;
+    }
+
+    .callout-item {
+        width: 50%;
+    }
+
+    .item-curso {
+        width: 244px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    .item-curso-img {
+        border-radius: 11px;
+        width: 100%;
+        height: 144px;
+    }
+
+    .item-curso-conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+    }
+
+
+    .modal-content {
+        padding: 3.2rem;
+        display: grid;
+    }
+
+    .modal-badge-name {
+        font-size: 2.4rem;
+        margin-bottom: 1.8rem;
+    }
+
+
+    .modal-badge-description {
+        font-size: 1.8rem;
+        color: #969696;
+        margin-bottom: 0.8rem;
+    }
+
+    .modal-badge-date {
+        font-size: 1.4rem;
+        
+    }
+
+    .badge-details-course {
+        font-size: 1.6rem;
+    }
+
+
+    .modal-footer {
+
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-control--btn {
+        font-size: 1.4rem;
+    }
+
+    .modal-control--btn:hover,
+    .modal-control--btn:active {
+        background-color: #dbdbdb;
+    }
+
+     /* CURSOS */
+     .curso-opcoes--btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #f1f5f9;
+
+        /* FLEX */
+        align-items: flex-start;
+        cursor: pointer;
+    }
+    
+    .lista--curso-opcoes {
+      top: 35px;
+      
+    }
+
+
+    /*===============*/
+    /* CONFIGURAÇÕES */
+    /*===============*/
+
+    .section-configuracoes.settings {
+      
+    }
+
+    .subnavbar-container.settings {
+        background: none;
+    }
+      
+    .username {
+        font-size: 2rem;
+    }
+    
+    .label-ultimo-login {
+        font-size: 1.6rem;
+    }
+
+    .settings .btn {
+        align-self: flex-end;
+    }
+
+    .email-recuperacao-mensagem {
+        font-size: 1.8rem;
+        color: #969696;
+    }
+}
+
+
+/*=======================================*/
+/* (1024px) TABLETS E NOTEBOOKS PEQUENOS */
+/*=======================================*/
+
+@media (min-width: 64em) {
+
+    .section--layout {
+        padding: 9.6rem 0;
+    }
+
+    
+    /*===========*/
+    /* NAVEGAÇÃO */
+    /*===========*/
+    
+    
+    .dropdown {
+        border-bottom: 1.55px solid #dbdbdb;
+    }
+    
+    .breadcrumbs--list li {
+        gap: 1.2rem;
+    }
+    
+    .breadcrumb-link:link, .breadcrumb-link:visited {
+        font-size: 1.4rem;
+        color: inherit;
+        font-weight: 500;
+        
+    }
+    
+    .breadcrumbs-link.breadcrumb-link--active {
+        color: #1D267D;
+    }
+    
+    
+    /* readaptação de layout */
+    
+    .main--layout {
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 24rem;
+    }
+    
+    
+    .main--layout.profile {
+        padding-left: 0;
+    }
+    
+    
+    /* CABEÇALHO DO PERFIL */
+    .perfil-header {
+        grid-template-columns: 1fr 3fr;
+        align-items: start;
+        column-gap: 1.8rem;
+    }
+    
+
+    .perfil-info-box {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding-top: 2.4rem;   
+    }
+    
+    .profile-description-box {
+        align-self: end;
+    }
+    
+    .user-level-detail {
+        font-size: 1.4rem;
+    }
+    
+    .perfil-header .btns-box {
+        white-space: nowrap;
+        align-self: end;
+    }
+    
+    .progresso-estacao {
+        align-self: end;
+    }
+
+    #conta--progresso {
+        width: 100%;
+        height: 0.5rem;
+    }
+    
+    .nivel-goal {
+        align-self: flex-end;
+    }
+    
+    .progresso-estacao-content {
+        gap: 0.8rem;
+    }
+    
+    .header-card.complete-register {
+        grid-column: 1 / 2;
+        height: 100%;
+    }
+    
+    /* SUBNAVEGAÇÃO */
+    .subnavbar-container {
+        position: fixed; 
+        
+        width: 250px;
+        height: 100vh; 
+        background-color: #fff; 
+        border-right: 1.55px solid #dbdbdb;
+        overflow-y: auto; 
+    }
+    
+    .subnavbar--list {
+        padding: 1.8rem 0 1.2rem 1.2rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1.8rem;
+    }
+    
+    .main--layout.settings .subnavbar--list  {
+        justify-content: flex-start;
+    }
+    
+    .subnavbar--tab {
+        background-color: transparent;
+        font-size: inherit;
+        border: none;
+    }
+    
+    .subnavbar--tab--active {
+        border-right: 3px solid #35BEF0;
+        color: #35BEF0;
+    }
+
+    
+    /* tabs */
+    .tab-contents--box {
+        width: 88%;
+    }
+    
+    
+    .tab-content {
+        background-color: #fff;
+    }
+    
+    
+    /* dashboard */
+    .dashboard--panels {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.4rem;
+    }
+    
+    
+    /* dashboard - atividade recente */
+    .additional-info-box {
+        gap: 1.8rem;
+    }
+    
+    
+    /* cursos */
+
+
+    .progress--container {
+        width: 100%;
+    }
+    
+    #course--progress-1,
+    #course--progress-2,
+    #course--progress--3 {
+        width: 100%;
+        height: 2.85px;
+    }
+    
+    .curso--progress-label {
+        margin-left: auto;
+        font-size: 1.4rem;
+    }
+    
+    
+    
+    /* tab - conquistas */
+    .conquistas.tab-content {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .destaque--badge {
+        grid-column:  1/ 2;
+        gap: 0.8rem;
+        padding: 2.4rem;
+    }
+    
+    .achievements-container {   
+        grid-column: 1 / 2;
+    }
+    
+    .item-conquista--btn {
+        font-weight: 600;
+    }
+    
+    
+    /* badges e conquistas */
+    
+    .badges-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        
+    }
+    
+    .badges-container.locked {
+        grid-column: 2 / 3;
+    }
+    
+    .badges-container.unlocked {
+        grid-column:  2 / 3;
+        grid-row: 2 / 4
+    }
+    
+    .badges-container .badge-box {
+        align-items: flex-start;
+    }
+    
+    .badges-container .badge-content.unlocked {
+        flex-direction: column;
+    }
+    
+    /*===========*/
+    /* DASHBOARD */
+    /*===========*/
+    
+    .tab-contents--box.container {
+        padding: 0;
+    }
+    
+    /*===================*/
+    /* - CONFIGURAÇÕES - */
+    /*===================*/
+    
+    .subnavbar-container.settings {
+
+    }
+
+    .main--layout.settings {
+        padding: 9.6rem 0 9.6rem 24rem ;
+    } 
+    
+
+    .breadcrumbs--list.settings {
+        padding-left: 2.4rem;
+    }
+
+    .subnavbar-container.settings .subnavbar--list {
+        justify-content: flex-start;
+        padding-top: 3.2rem;
+    }
+
+    .tab-contents--box.settings .tab-content {
+        row-gap: 2.4rem;
+        padding: 0 2.4rem;
+    }
+
+
+    /* imagem de perfil */
+    .img-wrapper {
+        justify-self: flex-start;
+        
+    }   
+
+
+    /*============*/
+    /* - FOOTER - */
+    /*============*/
+
+    .footer--alt {
+        padding-left: 24rem;
+    }
+}

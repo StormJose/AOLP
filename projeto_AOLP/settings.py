@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'sobre',
     'usuarios',
     'estacoes',
-    'forum'
+    'forum',
+    'perfil'
 ]
 
 
